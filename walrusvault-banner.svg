@@ -1,0 +1,105 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a3e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f23;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4f37fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ccd9a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(79,55,253,0.1)" stroke-width="1"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Logo/Icon -->
+  <circle cx="150" cy="150" r="60" fill="url(#accentGradient)" opacity="0.2"/>
+  <text x="150" y="170" font-family="Arial, sans-serif" font-size="60" fill="#fff" text-anchor="middle">🔐</text>
+  
+  <!-- Title -->
+  <text x="250" y="140" font-family="Arial, sans-serif" font-size="56" font-weight="bold" fill="#fff">
+    WalrusVault
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="250" y="185" font-family="Arial, sans-serif" font-size="24" fill="#2ccd9a">
+    Decentralized File Storage with SUI Wallet Authentication
+  </text>
+  
+  <!-- Divider -->
+  <line x1="100" y1="230" x2="1100" y2="230" stroke="url(#accentGradient)" stroke-width="2"/>
+  
+  <!-- Features -->
+  <g transform="translate(100, 280)">
+    <!-- Feature 1 -->
+    <circle cx="20" cy="20" r="12" fill="#4f37fd"/>
+    <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+    <text x="50" y="28" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="600">Wallet-Only Authentication</text>
+    <text x="50" y="52" font-family="Arial, sans-serif" font-size="16" fill="#aaa">No passwords needed - your wallet is your key</text>
+    
+    <!-- Feature 2 -->
+    <circle cx="20" cy="100" r="12" fill="#4f37fd"/>
+    <text x="20" y="106" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+    <text x="50" y="108" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="600">End-to-End Encryption</text>
+    <text x="50" y="132" font-family="Arial, sans-serif" font-size="16" fill="#aaa">Files encrypted with wallet signatures</text>
+    
+    <!-- Feature 3 -->
+    <circle cx="20" cy="180" r="12" fill="#4f37fd"/>
+    <text x="20" y="186" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+    <text x="50" y="188" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="600">Walrus Decentralized Storage</text>
+    <text x="50" y="212" font-family="Arial, sans-serif" font-size="16" fill="#aaa">Store files on decentralized blob storage</text>
+  </g>
+  
+  <g transform="translate(650, 280)">
+    <!-- Feature 4 -->
+    <circle cx="20" cy="20" r="12" fill="#2ccd9a"/>
+    <text x="20" y="26" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+    <text x="50" y="28" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="600">SUI Blockchain Registry</text>
+    <text x="50" y="52" font-family="Arial, sans-serif" font-size="16" fill="#aaa">File metadata on-chain for transparency</text>
+    
+    <!-- Feature 5 -->
+    <circle cx="20" cy="100" r="12" fill="#2ccd9a"/>
+    <text x="20" y="106" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+    <text x="50" y="108" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="600">Google Drive Import</text>
+    <text x="50" y="132" font-family="Arial, sans-serif" font-size="16" fill="#aaa">Bridge Web2 to Web3 seamlessly</text>
+    
+    <!-- Feature 6 -->
+    <circle cx="20" cy="180" r="12" fill="#2ccd9a"/>
+    <text x="20" y="186" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">✓</text>
+    <text x="50" y="188" font-family="Arial, sans-serif" font-size="20" fill="#fff" font-weight="600">Modern React UI</text>
+    <text x="50" y="212" font-family="Arial, sans-serif" font-size="16" fill="#aaa">Smooth animations with Framer Motion</text>
+  </g>
+  
+  <!-- Tech Stack -->
+  <g transform="translate(100, 520)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#888" font-weight="600">POWERED BY:</text>
+    
+    <rect x="0" y="15" width="120" height="40" rx="8" fill="rgba(79,55,253,0.2)" stroke="#4f37fd" stroke-width="2"/>
+    <text x="60" y="42" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">Tatum</text>
+    
+    <rect x="140" y="15" width="120" height="40" rx="8" fill="rgba(44,205,154,0.2)" stroke="#2ccd9a" stroke-width="2"/>
+    <text x="200" y="42" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">Walrus</text>
+    
+    <rect x="280" y="15" width="120" height="40" rx="8" fill="rgba(79,55,253,0.2)" stroke="#4f37fd" stroke-width="2"/>
+    <text x="340" y="42" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">SUI</text>
+  </g>
+  
+  <!-- Hackathon Badge -->
+  <g transform="translate(850, 520)">
+    <rect x="0" y="0" width="280" height="80" rx="12" fill="rgba(79,55,253,0.3)" stroke="url(#accentGradient)" stroke-width="3"/>
+    <text x="140" y="30" font-family="Arial, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">🏆 Tatum x Walrus Hackathon</text>
+    <text x="140" y="55" font-family="Arial, sans-serif" font-size="16" fill="#2ccd9a" text-anchor="middle">github.com/RamdanSe55/walrusvault</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="1050" cy="100" r="80" fill="url(#accentGradient)" opacity="0.1"/>
+  <circle cx="1100" cy="500" r="60" fill="url(#accentGradient)" opacity="0.1"/>
+</svg>

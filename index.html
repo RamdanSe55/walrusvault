@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WalrusVault - Showcase</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3rem;
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+    }
+
+    .theme-toggle {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .theme-btn {
+      padding: 0.75rem 1.5rem;
+      border: 2px solid #ddd;
+      background: white;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+
+    .theme-btn.active {
+      background: #333;
+      color: white;
+      border-color: #333;
+    }
+
+    .theme-btn:hover {
+      border-color: #333;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 300px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .card-link {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: all 0.3s;
+    }
+
+    .card-link:hover {
+      background: #555;
+    }
+
+    .info-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .info-box h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-box li {
+      padding: 0.5rem 0;
+      color: #666;
+    }
+
+    .info-box li:before {
+      content: "✓ ";
+      color: #4ECDC4;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div>
+        <h1>🐋 WalrusVault Showcase</h1>
+        <p>Decentralized File Storage with SUI Wallet</p>
+      </div>
+      <div class="theme-toggle">
+        <span>Theme:</span>
+        <button class="theme-btn active" onclick="setTheme('dark')">🌙 Dark</button>
+        <button class="theme-btn" onclick="setTheme('light')">☀️ Light</button>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="info-box">
+      <h2>📋 Project Overview</h2>
+      <ul>
+        <li>Wallet-only authentication (SUI Testnet)</li>
+        <li>End-to-end encryption with wallet signatures</li>
+        <li>Decentralized storage via Walrus Protocol</li>
+        <li>On-chain file registry on SUI blockchain</li>
+        <li>Google Drive import feature (Web2 to Web3 bridge)</li>
+        <li>React + Vite frontend with Framer Motion animations</li>
+        <li>Express.js backend with AES-256 encryption</li>
+        <li>Tatum SDK integration for blockchain operations</li>
+      </ul>
+    </div>
+
+    <!-- Gallery -->
+    <div class="gallery" id="gallery">
+      <!-- Dark Mode Cards -->
+      <div class="dark-mode">
+        <div class="card">
+          <div class="card-image">🔐</div>
+          <div class="card-content">
+            <div class="card-title">Login Page</div>
+            <div class="card-desc">Wallet-only authentication interface</div>
+            <a href="pages-login.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">📁</div>
+          <div class="card-content">
+            <div class="card-title">Dashboard</div>
+            <div class="card-desc">File management and storage overview</div>
+            <a href="pages-dashboard.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">🔗</div>
+          <div class="card-content">
+            <div class="card-title">Google Drive Import</div>
+            <div class="card-desc">Web2 to Web3 bridge interface</div>
+            <a href="pages-import.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">🏗️</div>
+          <div class="card-content">
+            <div class="card-title">Architecture</div>
+            <div class="card-desc">System design and data flow</div>
+            <a href="pages-architecture.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">🎨</div>
+          <div class="card-content">
+            <div class="card-title">Banner</div>
+            <div class="card-desc">Project branding and overview</div>
+            <a href="walrusvault-banner.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Light Mode Cards -->
+      <div class="light-mode hidden">
+        <div class="card">
+          <div class="card-image">🔐</div>
+          <div class="card-content">
+            <div class="card-title">Login Page (Light)</div>
+            <div class="card-desc">Wallet-only authentication interface</div>
+            <a href="pages-login-light.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">📁</div>
+          <div class="card-content">
+            <div class="card-title">Dashboard (Light)</div>
+            <div class="card-desc">File management and storage overview</div>
+            <a href="pages-dashboard-light.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">🔗</div>
+          <div class="card-content">
+            <div class="card-title">Google Drive Import (Light)</div>
+            <div class="card-desc">Web2 to Web3 bridge interface</div>
+            <a href="pages-import-light.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">🏗️</div>
+          <div class="card-content">
+            <div class="card-title">Architecture (Light)</div>
+            <div class="card-desc">System design and data flow</div>
+            <a href="pages-architecture-light.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">🎨</div>
+          <div class="card-content">
+            <div class="card-title">Banner (Light)</div>
+            <div class="card-desc">Project branding and overview</div>
+            <a href="walrusvault-banner-light.svg" class="card-link" target="_blank">View SVG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="info-box">
+      <h2>🏆 Hackathon Info</h2>
+      <ul>
+        <li>Event: Tatum x Walrus Hackathon 2026</li>
+        <li>Prize: $2,000</li>
+        <li>Deadline: June 6, 2026 17:00 UTC</li>
+        <li>Repository: https://github.com/RamdanSe55/walrusvault</li>
+        <li>Status: 95% Complete (MVP + SVG mockups ready)</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    function setTheme(theme) {
+      const darkMode = document.querySelector('.dark-mode');
+      const lightMode = document.querySelector('.light-mode');
+      const buttons = document.querySelectorAll('.theme-btn');
+
+      buttons.forEach(btn => btn.classList.remove('active'));
+
+      if (theme === 'dark') {
+        darkMode.classList.remove('hidden');
+        lightMode.classList.add('hidden');
+        buttons[0].classList.add('active');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        darkMode.classList.add('hidden');
+        lightMode.classList.remove('hidden');
+        buttons[1].classList.add('active');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+  </script>
+</body>
+</html>

@@ -4,7 +4,7 @@ import FileUpload from '../components/FileUpload'
 import FileList from '../components/FileList'
 import GoogleDriveImport from '../components/GoogleDriveImport'
 
-export default function DashboardPage({ walletAddress, onLogout }) {
+export default function DashboardPage({ walletAddress, onLogout, mockBackend }) {
   const [activeTab, setActiveTab] = useState('files')
   const [files, setFiles] = useState([])
   const [loading, setLoading] = useState(false)
@@ -17,13 +17,13 @@ export default function DashboardPage({ walletAddress, onLogout }) {
   const loadFiles = async () => {
     setLoading(true)
     try {
-      const response = await fetch(`/api/files/${walletAddress}`)
-      const data = await response.json()
+      const data = await mockBackend.listFiles(walletAddress)
       if (data.success) {
         setFiles(data.files || [])
       }
     } catch (error) {
       console.error('Failed to load files:', error)
+      alert('Failed to load files: ' + error.message)
     } finally {
       setLoading(false)
     }
@@ -32,53 +32,36 @@ export default function DashboardPage({ walletAddress, onLogout }) {
   const handleFileUpload = async (fileName, fileData, signature) => {
     try {
       setUploadProgress(30)
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          fileName,
-          fileData,
-          walletAddress,
-          signature
-        })
-      })
-
+      const data = await mockBackend.upload(fileName, fileData, walletAddress, signature)
+      
       setUploadProgress(70)
-      const data = await response.json()
-
       if (data.success) {
         setUploadProgress(100)
         await loadFiles()
         setTimeout(() => setUploadProgress(0), 1000)
+        alert('File uploaded successfully!')
       } else {
         alert('Upload failed: ' + data.error)
       }
     } catch (error) {
       console.error('Upload error:', error)
-      alert('Upload failed')
+      alert('Upload failed: ' + error.message)
+      setUploadProgress(0)
     }
   }
 
   const handleFileDelete = async (blobId, signature) => {
     try {
-      const response = await fetch(`/api/files/${blobId}`, {
-        method: 'DELETE',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          walletAddress,
-          signature
-        })
-      })
-
-      const data = await response.json()
+      const data = await mockBackend.deleteFile(blobId, walletAddress, signature)
       if (data.success) {
         await loadFiles()
+        alert('File deleted successfully!')
       } else {
         alert('Delete failed: ' + data.error)
       }
     } catch (error) {
       console.error('Delete error:', error)
-      alert('Delete failed')
+      alert('Delete failed: ' + error.message)
     }
   }
 

@@ -71,21 +71,29 @@ app.post('/api/upload', async (req, res) => {
       return res.status(400).json({ error: 'Missing required fields' });
     }
 
+    // Decode base64 file data
+    const fileBuffer = Buffer.from(fileData, 'base64');
+
+    // Check file size (max 10MB)
+    const maxSize = 10 * 1024 * 1024;
+    if (fileBuffer.length > maxSize) {
+      return res.status(413).json({ 
+        error: `File too large. Max size: 10MB. Your file: ${(fileBuffer.length / 1024 / 1024).toFixed(2)}MB` 
+      });
+    }
+
     // Verify signature
     if (!verifySignature(fileName, signature, walletAddress)) {
       return res.status(401).json({ error: 'Invalid signature' });
     }
 
-    // Decode base64 file data
-    const fileBuffer = Buffer.from(fileData, 'base64');
-
     // Encrypt file with wallet signature
     const encryptedBuffer = encryptFile(fileBuffer, signature);
 
-    // Generate blob ID (mock Walrus)
+    // Generate blob ID
     const blobId = crypto.randomBytes(32).toString('hex');
 
-    // Save encrypted file locally (mock Walrus storage)
+    // Save encrypted file locally
     const encryptedPath = path.join(uploadsDir, `${blobId}.enc`);
     fs.writeFileSync(encryptedPath, encryptedBuffer);
 

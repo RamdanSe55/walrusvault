@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="pastel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8D5F2;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C8F0FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8FFFE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Gradient -->
+  <rect width="1200" height="800" fill="url(#pastel)"/>
+
+  <!-- Header -->
+  <g id="header">
+    <text x="60" y="80" font-size="48" font-weight="bold" fill="#1a1a1a" font-family="Arial, sans-serif">🐋 WalrusVault</text>
+    <text x="60" y="120" font-size="20" fill="#2a2a2a" font-family="Arial, sans-serif">Decentralized File Storage with SUI Wallet</text>
+  </g>
+
+  <!-- Walrus Icon (simplified) -->
+  <g id="walrus-icon" transform="translate(900, 150)">
+    <!-- Body -->
+    <ellipse cx="0" cy="40" rx="60" ry="50" fill="#7FDBDB" stroke="#000" stroke-width="2"/>
+    <!-- Head -->
+    <circle cx="0" cy="-20" r="50" fill="#7FDBDB" stroke="#000" stroke-width="2"/>
+    <!-- Cap -->
+    <path d="M -40 -20 Q -40 -50, 0 -60 Q 40 -50, 40 -20" fill="#000"/>
+    <!-- Sunglasses Left -->
+    <rect x="-35" y="-30" width="30" height="20" rx="3" fill="#000" stroke="#FFF" stroke-width="2"/>
+    <!-- Sunglasses Right -->
+    <rect x="5" y="-30" width="30" height="20" rx="3" fill="#000" stroke="#FFF" stroke-width="2"/>
+    <!-- Bridge -->
+    <rect x="-5" y="-25" width="10" height="10" fill="#FFF"/>
+    <!-- Tusks -->
+    <path d="M -15 20 Q -20 50, -15 70" stroke="#FFF" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <path d="M 15 20 Q 20 50, 15 70" stroke="#FFF" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <!-- Login Box -->
+  <g id="login-box">
+    <rect x="100" y="250" width="600" height="450" rx="20" fill="rgba(255,255,255,0.6)" stroke="rgba(0,0,0,0.1)" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="400" y="320" font-size="36" font-weight="bold" fill="#1a1a1a" text-anchor="middle" font-family="Arial, sans-serif">Connect Your Wallet</text>
+    
+    <!-- Features -->
+    <g id="features">
+      <!-- Feature 1 -->
+      <circle cx="200" cy="400" r="40" fill="rgba(255,255,255,0.8)"/>
+      <text x="200" y="410" font-size="24" text-anchor="middle" fill="#1a1a1a">🔐</text>
+      <text x="200" y="460" font-size="14" text-anchor="middle" fill="#2a2a2a" font-family="Arial, sans-serif">Wallet-Only Auth</text>
+      
+      <!-- Feature 2 -->
+      <circle cx="400" cy="400" r="40" fill="rgba(255,255,255,0.8)"/>
+      <text x="400" y="410" font-size="24" text-anchor="middle" fill="#1a1a1a">🔒</text>
+      <text x="400" y="460" font-size="14" text-anchor="middle" fill="#2a2a2a" font-family="Arial, sans-serif">End-to-End Encrypted</text>
+      
+      <!-- Feature 3 -->
+      <circle cx="600" cy="400" r="40" fill="rgba(255,255,255,0.8)"/>
+      <text x="600" y="410" font-size="24" text-anchor="middle" fill="#1a1a1a">⛓️</text>
+      <text x="600" y="460" font-size="14" text-anchor="middle" fill="#2a2a2a" font-family="Arial, sans-serif">On-Chain Registry</text>
+    </g>
+    
+    <!-- Connect Button -->
+    <rect x="200" y="520" width="400" height="60" rx="10" fill="rgba(255,255,255,0.9)" stroke="rgba(0,0,0,0.2)" stroke-width="2"/>
+    <text x="400" y="560" font-size="20" font-weight="bold" fill="#1a1a1a" text-anchor="middle" font-family="Arial, sans-serif">👛 Connect SUI Wallet</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="750" font-size="14" fill="#3a3a3a" text-anchor="middle" font-family="Arial, sans-serif">🏆 Tatum x Walrus Hackathon 2026</text>
+</svg>

@@ -2,31 +2,49 @@
   <!-- Background -->
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#1a1a3e;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#1a0a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f3443;stop-opacity:1" />
     </linearGradient>
     <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#4f37fd;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#2ccd9a;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#845EC2;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#2C73D2;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#008BCF;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#00898A;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#008E9B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#008F7A;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <rect width="1400" height="900" fill="url(#bgGrad)"/>
   
   <!-- Header -->
-  <rect x="0" y="0" width="1400" height="80" fill="rgba(26,26,62,0.6)" stroke="rgba(79,55,253,0.2)" stroke-width="1"/>
-  <text x="40" y="50" font-family="Arial, sans-serif" font-size="28" fill="#fff" font-weight="bold">WalrusVault</text>
-  <text x="1320" y="50" font-family="Arial, sans-serif" font-size="14" fill="#2ccd9a" text-anchor="end">0x1234...abcd</text>
+  <rect x="0" y="0" width="1400" height="80" fill="rgba(26,26,62,0.6)" stroke="rgba(132,94,194,0.2)" stroke-width="1"/>
+  
+  <!-- Walrus Icon in Header -->
+  <g transform="translate(30, 15) scale(0.5)">
+    <ellipse cx="62" cy="75" rx="35" ry="42" fill="#A8E6E1" stroke="#000" stroke-width="1.5"/>
+    <ellipse cx="62" cy="40" rx="28" ry="26" fill="#A8E6E1" stroke="#000" stroke-width="1.5"/>
+    <path d="M 34 40 Q 34 22, 62 22 Q 90 22, 90 40" fill="#000"/>
+    <rect x="42" y="36" width="14" height="12" rx="1.5" fill="#1A1A1A" stroke="#000" stroke-width="1.5"/>
+    <rect x="68" y="36" width="14" height="12" rx="1.5" fill="#1A1A1A" stroke="#000" stroke-width="1.5"/>
+    <rect x="56" y="41" width="12" height="3" fill="#000"/>
+    <ellipse cx="62" cy="54" rx="4" ry="3.5" fill="#000"/>
+    <path d="M 54 58 Q 52 68, 50 78 Q 49 81, 51 83 Q 53 81, 54 78 Q 56 68, 57 58 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+    <path d="M 70 58 Q 72 68, 74 78 Q 75 81, 73 83 Q 71 81, 70 78 Q 68 68, 67 58 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+  </g>
+  
+  <text x="100" y="50" font-family="Arial, sans-serif" font-size="28" fill="#fff" font-weight="bold">WalrusVault</text>
+  <text x="1320" y="50" font-family="Arial, sans-serif" font-size="14" fill="#008F7A" text-anchor="end">0x1234...abcd</text>
   
   <!-- Sidebar -->
-  <rect x="0" y="80" width="200" height="820" fill="rgba(26,26,62,0.4)" stroke="rgba(79,55,253,0.1)" stroke-width="1"/>
+  <rect x="0" y="80" width="200" height="820" fill="rgba(26,26,62,0.4)" stroke="rgba(132,94,194,0.1)" stroke-width="1"/>
   
   <!-- Tabs -->
   <g transform="translate(20, 120)">
-    <rect x="0" y="0" width="160" height="50" rx="8" fill="rgba(79,55,253,0.2)"/>
+    <rect x="0" y="0" width="160" height="50" rx="8" fill="rgba(132,94,194,0.2)"/>
     <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">📤 Upload</text>
     
-    <rect x="0" y="70" width="160" height="50" rx="8" fill="rgba(79,55,253,0.2)"/>
+    <rect x="0" y="70" width="160" height="50" rx="8" fill="rgba(132,94,194,0.2)"/>
     <text x="80" y="105" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">📁 Files</text>
     
     <rect x="0" y="140" width="160" height="50" rx="8" fill="url(#accentGrad)"/>
@@ -36,25 +54,25 @@
   <!-- Main Content - Import Tab -->
   <g transform="translate(250, 120)">
     <!-- Import Card -->
-    <rect x="0" y="0" width="1100" height="700" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(79,55,253,0.3)" stroke-width="2"/>
+    <rect x="0" y="0" width="1100" height="700" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(132,94,194,0.3)" stroke-width="2"/>
     
     <text x="550" y="40" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">📥 Import from Google Drive</text>
     <text x="550" y="70" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Bridge your Web2 files to Web3 storage</text>
     
     <!-- Connect Google Drive Button -->
-    <rect x="350" y="120" width="400" height="60" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    <rect x="350" y="120" width="400" height="60" rx="12" fill="url(#accentGrad)" stroke="none"/>
     <text x="550" y="160" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">🔗 Connect Google Drive</text>
     
     <!-- Info Box -->
-    <rect x="100" y="220" width="900" height="120" rx="12" fill="rgba(44,205,154,0.1)" stroke="rgba(44,205,154,0.3)" stroke-width="2"/>
-    <text x="550" y="260" font-family="Arial, sans-serif" font-size="16" fill="#2ccd9a" text-anchor="middle" font-weight="bold">How it works:</text>
+    <rect x="100" y="220" width="900" height="120" rx="12" fill="rgba(0,143,122,0.1)" stroke="rgba(0,143,122,0.3)" stroke-width="2"/>
+    <text x="550" y="260" font-family="Arial, sans-serif" font-size="16" fill="#008F7A" text-anchor="middle" font-weight="bold">How it works:</text>
     <text x="550" y="290" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">1. Connect your Google Drive account</text>
     <text x="550" y="315" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">2. Select files to import</text>
     <text x="550" y="340" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">3. Files are encrypted with your wallet and stored on Walrus</text>
     
     <!-- File Selection Area (placeholder) -->
-    <rect x="100" y="380" width="900" height="280" rx="12" fill="rgba(79,55,253,0.05)" stroke="rgba(79,55,253,0.2)" stroke-width="1" stroke-dasharray="5,5"/>
-    <text x="550" y="500" font-family="Arial, sans-serif" font-size="48" fill="rgba(79,55,253,0.3)" text-anchor="middle">📂</text>
+    <rect x="100" y="380" width="900" height="280" rx="12" fill="rgba(132,94,194,0.05)" stroke="rgba(132,94,194,0.2)" stroke-width="1" stroke-dasharray="5,5"/>
+    <text x="550" y="500" font-family="Arial, sans-serif" font-size="48" fill="rgba(132,94,194,0.3)" text-anchor="middle">📂</text>
     <text x="550" y="550" font-family="Arial, sans-serif" font-size="16" fill="#666" text-anchor="middle">Connect Google Drive to see your files</text>
   </g>
 </svg>

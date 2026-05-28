@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
+  <!-- Walrus Body -->
+  <ellipse cx="60" cy="85" rx="45" ry="55" fill="#A8E6E1" stroke="#000" stroke-width="2"/>
+  
+  <!-- Head/Top -->
+  <ellipse cx="60" cy="45" rx="38" ry="35" fill="#A8E6E1" stroke="#000" stroke-width="2"/>
+  <path d="M 22 45 Q 22 20, 60 20 Q 98 20, 98 45" fill="#000"/>
+  
+  <!-- Sunglasses -->
+  <g id="sunglasses">
+    <!-- Left lens -->
+    <rect x="30" y="40" width="18" height="16" rx="2" fill="#1A1A1A" stroke="#000" stroke-width="2"/>
+    <line x1="30" y1="40" x2="48" y2="56" stroke="#333" stroke-width="1" opacity="0.5"/>
+    <line x1="34" y1="40" x2="48" y2="52" stroke="#333" stroke-width="1" opacity="0.5"/>
+    <line x1="38" y1="40" x2="48" y2="48" stroke="#333" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Right lens -->
+    <rect x="72" y="40" width="18" height="16" rx="2" fill="#1A1A1A" stroke="#000" stroke-width="2"/>
+    <line x1="72" y1="40" x2="90" y2="56" stroke="#333" stroke-width="1" opacity="0.5"/>
+    <line x1="76" y1="40" x2="90" y2="52" stroke="#333" stroke-width="1" opacity="0.5"/>
+    <line x1="80" y1="40" x2="90" y2="48" stroke="#333" stroke-width="1" opacity="0.5"/>
+    
+    <!-- Bridge -->
+    <rect x="48" y="46" width="24" height="4" fill="#000"/>
+  </g>
+  
+  <!-- Whiskers -->
+  <g id="whiskers">
+    <!-- Left whiskers -->
+    <line x1="25" y1="60" x2="10" y2="58" stroke="#000" stroke-width="1.5"/>
+    <line x1="25" y1="65" x2="8" y2="65" stroke="#000" stroke-width="1.5"/>
+    <line x1="25" y1="70" x2="10" y2="72" stroke="#000" stroke-width="1.5"/>
+    
+    <!-- Right whiskers -->
+    <line x1="95" y1="60" x2="110" y2="58" stroke="#000" stroke-width="1.5"/>
+    <line x1="95" y1="65" x2="112" y2="65" stroke="#000" stroke-width="1.5"/>
+    <line x1="95" y1="70" x2="110" y2="72" stroke="#000" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Nose -->
+  <ellipse cx="60" cy="68" rx="6" ry="5" fill="#000"/>
+  
+  <!-- Mouth -->
+  <path d="M 50 75 Q 60 80, 70 75" stroke="#000" stroke-width="2" fill="none"/>
+  
+  <!-- Tusks -->
+  <g id="tusks">
+    <!-- Left tusk -->
+    <path d="M 48 80 Q 45 95, 42 110 Q 41 115, 44 118 Q 47 115, 48 110 Q 51 95, 52 80 Z" fill="#FFF" stroke="#000" stroke-width="2"/>
+    
+    <!-- Right tusk -->
+    <path d="M 72 80 Q 75 95, 78 110 Q 79 115, 76 118 Q 73 115, 72 110 Q 69 95, 68 80 Z" fill="#FFF" stroke="#000" stroke-width="2"/>
+  </g>
+  
+  <!-- Body spots/texture -->
+  <circle cx="40" cy="90" r="1.5" fill="#000" opacity="0.3"/>
+  <circle cx="50" cy="100" r="1.5" fill="#000" opacity="0.3"/>
+  <circle cx="70" cy="95" r="1.5" fill="#000" opacity="0.3"/>
+  <circle cx="80" cy="105" r="1.5" fill="#000" opacity="0.3"/>
+  <circle cx="45" cy="110" r="1.5" fill="#000" opacity="0.3"/>
+  <circle cx="75" cy="115" r="1.5" fill="#000" opacity="0.3"/>
+</svg>

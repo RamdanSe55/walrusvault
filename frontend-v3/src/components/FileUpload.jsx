@@ -18,21 +18,44 @@ export default function FileUpload({ walletAddress, onUpload, uploadProgress }) 
       return
     }
 
+    // Check file size (max 50MB)
+    const maxSize = 50 * 1024 * 1024
+    if (selectedFile.size > maxSize) {
+      alert(`File too large. Max size: 50MB. Your file: ${(selectedFile.size / 1024 / 1024).toFixed(2)}MB`)
+      return
+    }
+
     setUploading(true)
     try {
       const reader = new FileReader()
+      reader.onerror = () => {
+        console.error('FileReader error:', reader.error)
+        alert('Failed to read file: ' + reader.error)
+        setUploading(false)
+      }
       reader.onload = async (e) => {
-        const fileData = e.target.result.split(',')[1] // Get base64
-        const mockSignature = 'sig_' + Date.now()
-        
-        await onUpload(selectedFile.name, fileData, mockSignature)
-        setSelectedFile(null)
+        try {
+          const fileData = e.target.result.split(',')[1] // Get base64
+          if (!fileData) {
+            alert('Failed to encode file')
+            setUploading(false)
+            return
+          }
+          const mockSignature = 'sig_' + Date.now()
+          console.log('Uploading file:', selectedFile.name, 'Size:', selectedFile.size, 'Base64 length:', fileData.length)
+          await onUpload(selectedFile.name, fileData, mockSignature)
+          setSelectedFile(null)
+        } catch (error) {
+          console.error('Upload error:', error)
+          alert('Upload failed: ' + error.message)
+        } finally {
+          setUploading(false)
+        }
       }
       reader.readAsDataURL(selectedFile)
     } catch (error) {
       console.error('Upload error:', error)
-      alert('Upload failed')
-    } finally {
+      alert('Upload failed: ' + error.message)
       setUploading(false)
     }
   }

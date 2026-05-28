@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WalrusVault - Unified Dark/Light Mode</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: #f5f5f5;
+    }
+
+    /* Sticky Header with Toggle */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      color: #333;
+    }
+
+    .header p {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 0.25rem;
+    }
+
+    /* Toggle Switch */
+    .theme-toggle {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .toggle-label {
+      font-size: 1rem;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 60px;
+      height: 30px;
+      background: #ccc;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .toggle-switch.active {
+      background: #4ECDC4;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background: white;
+      border-radius: 50%;
+      transition: transform 0.3s;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .toggle-switch.active .toggle-slider {
+      transform: translateX(30px);
+    }
+
+    .mode-text {
+      font-size: 0.9rem;
+      color: #666;
+      min-width: 80px;
+    }
+
+    /* Page Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Page Section */
+    .page-section {
+      margin-bottom: 3rem;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .page-title {
+      padding: 1.5rem 2rem;
+      background: #f8f8f8;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .page-title h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .page-title p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .page-content {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .page-content img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Hide/Show based on mode */
+    .dark-mode-page {
+      display: block;
+    }
+
+    .light-mode-page {
+      display: none;
+    }
+
+    body.light-mode .dark-mode-page {
+      display: none;
+    }
+
+    body.light-mode .light-mode-page {
+      display: block;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+
+    .info-box h2 {
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    .info-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .info-box li {
+      padding: 0.5rem 0;
+      color: #666;
+    }
+
+    .info-box li:before {
+      content: "✓ ";
+      color: #4ECDC4;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .header h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky Header with Toggle -->
+  <div class="header">
+    <div>
+      <h1>🐋 WalrusVault</h1>
+      <p>Unified Dark/Light Mode Showcase</p>
+    </div>
+    <div class="theme-toggle">
+      <span class="toggle-label">Theme:</span>
+      <div class="toggle-switch" id="themeToggle" onclick="toggleTheme()">
+        <div class="toggle-slider"></div>
+      </div>
+      <span class="mode-text" id="modeText">🌙 Dark Mode</span>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Info -->
+    <div class="info-box">
+      <h2>📋 Unified Theme System</h2>
+      <ul>
+        <li>Toggle Dark/Light mode from header (applies to ALL pages)</li>
+        <li>Theme preference saved in LocalStorage</li>
+        <li>All pages synchronized automatically</li>
+        <li>Dark Mode: Colorpegga gradient (#5B4E9D → #7EEBD8)</li>
+        <li>Light Mode: Pastel gradient (#E8D5F2 → #E8FFFE)</li>
+      </ul>
+    </div>
+
+    <!-- Login Page -->
+    <div class="page-section">
+      <div class="page-title">
+        <h2>🔐 Login Page</h2>
+        <p>Wallet-only authentication with structured layout</p>
+      </div>
+      <div class="page-content">
+        <img src="pages-login.svg" alt="Login Page Dark" class="dark-mode-page">
+        <img src="pages-login-light.svg" alt="Login Page Light" class="light-mode-page">
+      </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div class="page-section">
+      <div class="page-title">
+        <h2>📁 Dashboard Page</h2>
+        <p>File management with search functionality</p>
+      </div>
+      <div class="page-content">
+        <img src="pages-dashboard.svg" alt="Dashboard Dark" class="dark-mode-page">
+        <img src="pages-dashboard-light.svg" alt="Dashboard Light" class="light-mode-page">
+      </div>
+    </div>
+
+    <!-- Import Page -->
+    <div class="page-section">
+      <div class="page-title">
+        <h2>🔗 Google Drive Import</h2>
+        <p>Web2 to Web3 bridge interface</p>
+      </div>
+      <div class="page-content">
+        <img src="pages-import.svg" alt="Import Dark" class="dark-mode-page">
+        <img src="pages-import-light.svg" alt="Import Light" class="light-mode-page">
+      </div>
+    </div>
+
+    <!-- Architecture Page -->
+    <div class="page-section">
+      <div class="page-title">
+        <h2>🏗️ System Architecture</h2>
+        <p>Technical design and data flow</p>
+      </div>
+      <div class="page-content">
+        <img src="pages-architecture.svg" alt="Architecture Dark" class="dark-mode-page">
+        <img src="pages-architecture-light.svg" alt="Architecture Light" class="light-mode-page">
+      </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="page-section">
+      <div class="page-title">
+        <h2>🎨 Project Banner</h2>
+        <p>Branding and overview</p>
+      </div>
+      <div class="page-content">
+        <img src="walrusvault-banner.svg" alt="Banner Dark" class="dark-mode-page">
+        <img src="walrusvault-banner-light.svg" alt="Banner Light" class="light-mode-page">
+      </div>
+    </div>
+
+    <!-- Footer Info -->
+    <div class="info-box">
+      <h2>🏆 Hackathon Info</h2>
+      <ul>
+        <li>Event: Tatum x Walrus Hackathon 2026</li>
+        <li>Prize: $2,000</li>
+        <li>Deadline: June 6, 2026 17:00 UTC</li>
+        <li>Repository: https://github.com/RamdanSe55/walrusvault</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>🐋 WalrusVault • Decentralized File Storage with SUI Wallet</p>
+    <p>All pages synchronized with unified theme system</p>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const toggle = document.getElementById('themeToggle');
+      const modeText = document.getElementById('modeText');
+      
+      body.classList.toggle('light-mode');
+      toggle.classList.toggle('active');
+      
+      if (body.classList.contains('light-mode')) {
+        modeText.textContent = '☀️ Light Mode';
+        localStorage.setItem('theme', 'light');
+      } else {
+        modeText.textContent = '🌙 Dark Mode';
+        localStorage.setItem('theme', 'dark');
+      }
+    }
+
+    // Load saved theme on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      const body = document.body;
+      const toggle = document.getElementById('themeToggle');
+      const modeText = document.getElementById('modeText');
+      
+      if (savedTheme === 'light') {
+        body.classList.add('light-mode');
+        toggle.classList.add('active');
+        modeText.textContent = '☀️ Light Mode';
+      }
+    });
+  </script>
+</body>
+</html>

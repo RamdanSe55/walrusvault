@@ -1,0 +1,59 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a3e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4f37fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ccd9a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+  
+  <!-- Left side - Branding -->
+  <g transform="translate(100, 150)">
+    <circle cx="50" cy="50" r="50" fill="url(#accentGrad)" opacity="0.2"/>
+    <text x="50" y="70" font-family="Arial, sans-serif" font-size="80" fill="#fff" text-anchor="middle">🔐</text>
+    
+    <text x="50" y="180" font-family="Arial, sans-serif" font-size="48" fill="#fff" text-anchor="middle" font-weight="bold">WalrusVault</text>
+    <text x="50" y="220" font-family="Arial, sans-serif" font-size="18" fill="#2ccd9a" text-anchor="middle">Decentralized Storage</text>
+    <text x="50" y="250" font-family="Arial, sans-serif" font-size="16" fill="#aaa" text-anchor="middle">Powered by SUI Wallet</text>
+  </g>
+  
+  <!-- Right side - Login Form -->
+  <g transform="translate(650, 150)">
+    <!-- Card -->
+    <rect x="0" y="0" width="450" height="500" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(79,55,253,0.3)" stroke-width="2"/>
+    
+    <!-- Title -->
+    <text x="225" y="50" font-family="Arial, sans-serif" font-size="32" fill="#fff" text-anchor="middle" font-weight="bold">Connect Wallet</text>
+    <text x="225" y="85" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Sign in with your SUI wallet</text>
+    
+    <!-- Divider -->
+    <line x1="30" y1="110" x2="420" y2="110" stroke="rgba(79,55,253,0.2)" stroke-width="1"/>
+    
+    <!-- Wallet Info Box -->
+    <rect x="30" y="140" width="390" height="80" rx="12" fill="rgba(79,55,253,0.1)" stroke="rgba(79,55,253,0.3)" stroke-width="2"/>
+    <text x="225" y="165" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Supported Wallets:</text>
+    <text x="225" y="195" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">🔐 Sui Wallet • 🦊 Ethos • 💼 Ledger</text>
+    
+    <!-- Connect Button -->
+    <rect x="30" y="250" width="390" height="60" rx="12" fill="url(#accentGrad)" stroke="none"/>
+    <text x="225" y="290" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">🔗 Connect SUI Wallet</text>
+    
+    <!-- Network Info -->
+    <rect x="30" y="330" width="390" height="60" rx="12" fill="rgba(44,205,154,0.1)" stroke="rgba(44,205,154,0.3)" stroke-width="2"/>
+    <text x="225" y="355" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Network: SUI Testnet</text>
+    <text x="225" y="380" font-family="Arial, sans-serif" font-size="12" fill="#2ccd9a" text-anchor="middle">Need testnet SUI? Get from faucet</text>
+    
+    <!-- Footer -->
+    <text x="225" y="470" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">No password needed • Wallet signs all transactions</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="700" r="100" fill="url(#accentGrad)" opacity="0.05"/>
+  <circle cx="1050" cy="100" r="80" fill="url(#accentGrad)" opacity="0.05"/>
+</svg>

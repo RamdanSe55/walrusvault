@@ -1,0 +1,76 @@
+<svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f0f23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a1a3e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4f37fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2ccd9a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1400" height="900" fill="url(#bgGrad)"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1400" height="80" fill="rgba(26,26,62,0.6)" stroke="rgba(79,55,253,0.2)" stroke-width="1"/>
+  <text x="40" y="50" font-family="Arial, sans-serif" font-size="28" fill="#fff" font-weight="bold">WalrusVault</text>
+  <text x="1320" y="50" font-family="Arial, sans-serif" font-size="14" fill="#2ccd9a" text-anchor="end">0x1234...abcd</text>
+  
+  <!-- Sidebar -->
+  <rect x="0" y="80" width="200" height="820" fill="rgba(26,26,62,0.4)" stroke="rgba(79,55,253,0.1)" stroke-width="1"/>
+  
+  <!-- Tabs -->
+  <g transform="translate(20, 120)">
+    <rect x="0" y="0" width="160" height="50" rx="8" fill="url(#accentGrad)"/>
+    <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">📤 Upload</text>
+    
+    <rect x="0" y="70" width="160" height="50" rx="8" fill="rgba(79,55,253,0.2)"/>
+    <text x="80" y="105" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">📁 Files</text>
+    
+    <rect x="0" y="140" width="160" height="50" rx="8" fill="rgba(79,55,253,0.2)"/>
+    <text x="80" y="175" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">📥 Import</text>
+  </g>
+  
+  <!-- Main Content - Upload Tab -->
+  <g transform="translate(250, 120)">
+    <!-- Upload Card -->
+    <rect x="0" y="0" width="1100" height="350" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(79,55,253,0.3)" stroke-width="2"/>
+    
+    <text x="550" y="40" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">📤 Upload File</text>
+    <text x="550" y="70" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Your wallet signs the encryption — no password needed</text>
+    
+    <!-- Drag Drop Area -->
+    <rect x="50" y="100" width="1000" height="180" rx="12" fill="rgba(79,55,253,0.1)" stroke="rgba(79,55,253,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="550" y="160" font-family="Arial, sans-serif" font-size="48" fill="#4f37fd" text-anchor="middle">⬆️</text>
+    <text x="550" y="210" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">Drag and drop your file here</text>
+    <text x="550" y="240" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">or click to browse</text>
+  </g>
+  
+  <!-- File List Section -->
+  <g transform="translate(250, 500)">
+    <!-- Files Card -->
+    <rect x="0" y="0" width="1100" height="350" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(79,55,253,0.3)" stroke-width="2"/>
+    
+    <text x="550" y="40" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">📁 Your Files</text>
+    
+    <!-- File Item 1 -->
+    <rect x="30" y="70" width="1040" height="70" rx="8" fill="rgba(79,55,253,0.1)" stroke="rgba(79,55,253,0.2)" stroke-width="1"/>
+    <text x="50" y="105" font-family="Arial, sans-serif" font-size="14" fill="#fff" font-weight="600">document.pdf</text>
+    <text x="50" y="125" font-family="Arial, sans-serif" font-size="12" fill="#aaa">2.4 MB • Uploaded 2 hours ago</text>
+    <text x="1030" y="105" font-family="Arial, sans-serif" font-size="14" fill="#2ccd9a" text-anchor="end">📥 Download</text>
+    
+    <!-- File Item 2 -->
+    <rect x="30" y="160" width="1040" height="70" rx="8" fill="rgba(79,55,253,0.1)" stroke="rgba(79,55,253,0.2)" stroke-width="1"/>
+    <text x="50" y="195" font-family="Arial, sans-serif" font-size="14" fill="#fff" font-weight="600">presentation.pptx</text>
+    <text x="50" y="215" font-family="Arial, sans-serif" font-size="12" fill="#aaa">5.1 MB • Uploaded 1 day ago</text>
+    <text x="1030" y="195" font-family="Arial, sans-serif" font-size="14" fill="#2ccd9a" text-anchor="end">📥 Download</text>
+    
+    <!-- File Item 3 -->
+    <rect x="30" y="250" width="1040" height="70" rx="8" fill="rgba(79,55,253,0.1)" stroke="rgba(79,55,253,0.2)" stroke-width="1"/>
+    <text x="50" y="285" font-family="Arial, sans-serif" font-size="14" fill="#fff" font-weight="600">data.xlsx</text>
+    <text x="50" y="305" font-family="Arial, sans-serif" font-size="12" fill="#aaa">1.8 MB • Uploaded 3 days ago</text>
+    <text x="1030" y="285" font-family="Arial, sans-serif" font-size="14" fill="#2ccd9a" text-anchor="end">📥 Download</text>
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900">
+  <defs>
+    <linearGradient id="colorpegga" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B4E9D;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#4A7BC9;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#3498D4;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#3DBCC4;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7EEBD8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="url(#colorpegga)"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="rgba(255,255,255,0.1)"/>
+  <text x="40" y="50" font-size="32" font-weight="bold" fill="white" font-family="Arial, sans-serif">🐋 WalrusVault</text>
+  <text x="1100" y="50" font-size="14" fill="rgba(255,255,255,0.8)" text-anchor="end" font-family="Arial, sans-serif">Wallet: 0x1234...5678</text>
+
+  <!-- Tabs -->
+  <g id="tabs">
+    <rect x="40" y="100" width="150" height="50" rx="8" fill="rgba(255,255,255,0.3)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+    <text x="115" y="135" font-size="16" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">📁 My Files</text>
+    
+    <rect x="210" y="100" width="150" height="50" rx="8" fill="rgba(255,255,255,0.15)"/>
+    <text x="285" y="135" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">⬆️ Upload</text>
+    
+    <rect x="380" y="100" width="150" height="50" rx="8" fill="rgba(255,255,255,0.15)"/>
+    <text x="455" y="135" font-size="16" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">🔗 Import</text>
+  </g>
+
+  <!-- File Cards Grid -->
+  <g id="files">
+    <!-- File Card 1 -->
+    <rect x="40" y="180" width="280" height="280" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="180" y="240" font-size="48" text-anchor="middle" fill="white">📄</text>
+    <text x="180" y="290" font-size="16" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">document.pdf</text>
+    <text x="180" y="315" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">2.5 MB • May 28</text>
+    <circle cx="120" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="120" y="368" font-size="18" text-anchor="middle" fill="white">⬇️</text>
+    <circle cx="240" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="240" y="368" font-size="18" text-anchor="middle" fill="white">🗑️</text>
+
+    <!-- File Card 2 -->
+    <rect x="340" y="180" width="280" height="280" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="480" y="240" font-size="48" text-anchor="middle" fill="white">🖼️</text>
+    <text x="480" y="290" font-size="16" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">photo.jpg</text>
+    <text x="480" y="315" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">4.2 MB • May 27</text>
+    <circle cx="420" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="420" y="368" font-size="18" text-anchor="middle" fill="white">⬇️</text>
+    <circle cx="540" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="540" y="368" font-size="18" text-anchor="middle" fill="white">🗑️</text>
+
+    <!-- File Card 3 -->
+    <rect x="640" y="180" width="280" height="280" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="780" y="240" font-size="48" text-anchor="middle" fill="white">📊</text>
+    <text x="780" y="290" font-size="16" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">data.xlsx</text>
+    <text x="780" y="315" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">1.8 MB • May 26</text>
+    <circle cx="720" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="720" y="368" font-size="18" text-anchor="middle" fill="white">⬇️</text>
+    <circle cx="840" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="840" y="368" font-size="18" text-anchor="middle" fill="white">🗑️</text>
+
+    <!-- File Card 4 -->
+    <rect x="940" y="180" width="220" height="280" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="1050" y="240" font-size="48" text-anchor="middle" fill="white">🎵</text>
+    <text x="1050" y="290" font-size="14" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">song.mp3</text>
+    <text x="1050" y="315" font-size="12" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">5.1 MB</text>
+    <circle cx="1000" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="1000" y="368" font-size="18" text-anchor="middle" fill="white">⬇️</text>
+    <circle cx="1100" cy="360" r="25" fill="rgba(255,255,255,0.2)"/>
+    <text x="1100" y="368" font-size="18" text-anchor="middle" fill="white">🗑️</text>
+  </g>
+
+  <!-- Stats -->
+  <g id="stats">
+    <rect x="40" y="500" width="1120" height="100" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    
+    <text x="100" y="535" font-size="14" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">Total Files</text>
+    <text x="100" y="560" font-size="28" font-weight="bold" fill="white" font-family="Arial, sans-serif">4</text>
+    
+    <text x="350" y="535" font-size="14" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">Total Storage</text>
+    <text x="350" y="560" font-size="28" font-weight="bold" fill="white" font-family="Arial, sans-serif">13.6 MB</text>
+    
+    <text x="600" y="535" font-size="14" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">Encryption</text>
+    <text x="600" y="560" font-size="28" font-weight="bold" fill="white" font-family="Arial, sans-serif">AES-256</text>
+    
+    <text x="900" y="535" font-size="14" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">Status</text>
+    <text x="900" y="560" font-size="28" font-weight="bold" fill="#7EEBD8" font-family="Arial, sans-serif">✓ Secure</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="850" font-size="12" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-family="Arial, sans-serif">All files encrypted with wallet signature • Stored on Walrus Protocol</text>
+</svg>

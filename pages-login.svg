@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <linearGradient id="colorpegga" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5B4E9D;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#4A7BC9;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#3498D4;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#3DBCC4;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7EEBD8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Gradient -->
+  <rect width="1200" height="800" fill="url(#colorpegga)"/>
+
+  <!-- Header with Logo -->
+  <g id="header">
+    <!-- Walrus Icon (Small) -->
+    <g transform="translate(80, 60)">
+      <ellipse cx="0" cy="15" rx="25" ry="20" fill="#7FDBDB" stroke="#000" stroke-width="1.5"/>
+      <circle cx="0" cy="-8" r="20" fill="#7FDBDB" stroke="#000" stroke-width="1.5"/>
+      <path d="M -16 -8 Q -16 -20, 0 -24 Q 16 -20, 16 -8" fill="#000"/>
+      <rect x="-14" y="-12" width="12" height="8" rx="2" fill="#000" stroke="#FFF" stroke-width="1.5"/>
+      <rect x="2" y="-12" width="12" height="8" rx="2" fill="#000" stroke="#FFF" stroke-width="1.5"/>
+      <rect x="-2" y="-10" width="4" height="4" fill="#FFF"/>
+      <path d="M -6 8 Q -8 20, -6 28" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 6 8 Q 8 20, 6 28" stroke="#FFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+    </g>
+    <text x="130" y="75" font-size="42" font-weight="bold" fill="white" font-family="Arial, sans-serif">WalrusVault</text>
+    <text x="130" y="105" font-size="16" fill="rgba(255,255,255,0.9)" font-family="Arial, sans-serif">Decentralized File Storage with SUI Wallet</text>
+  </g>
+
+  <!-- Main Login Container -->
+  <g id="login-container">
+    <rect x="300" y="180" width="600" height="550" rx="24" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    
+    <!-- Title Section -->
+    <text x="600" y="250" font-size="38" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">Connect Your Wallet</text>
+    <text x="600" y="285" font-size="15" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-family="Arial, sans-serif">Secure authentication with SUI blockchain</text>
+    
+    <!-- Feature Icons Grid (3 columns, well-structured) -->
+    <g id="features-grid">
+      <!-- Row 1 -->
+      <g transform="translate(380, 340)">
+        <rect x="-50" y="-50" width="100" height="100" rx="12" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+        <text x="0" y="-5" font-size="32" text-anchor="middle" fill="white">🔐</text>
+        <text x="0" y="25" font-size="13" font-weight="600" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Wallet-Only</text>
+        <text x="0" y="40" font-size="11" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">No Password</text>
+      </g>
+      
+      <g transform="translate(600, 340)">
+        <rect x="-50" y="-50" width="100" height="100" rx="12" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+        <text x="0" y="-5" font-size="32" text-anchor="middle" fill="white">🔒</text>
+        <text x="0" y="25" font-size="13" font-weight="600" text-anchor="middle" fill="white" font-family="Arial, sans-serif">Encrypted</text>
+        <text x="0" y="40" font-size="11" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">AES-256</text>
+      </g>
+      
+      <g transform="translate(820, 340)">
+        <rect x="-50" y="-50" width="100" height="100" rx="12" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+        <text x="0" y="-5" font-size="32" text-anchor="middle" fill="white">⛓️</text>
+        <text x="0" y="25" font-size="13" font-weight="600" text-anchor="middle" fill="white" font-family="Arial, sans-serif">On-Chain</text>
+        <text x="0" y="40" font-size="11" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Arial, sans-serif">SUI Registry</text>
+      </g>
+    </g>
+    
+    <!-- Divider Line -->
+    <line x1="350" y1="460" x2="850" y2="460" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    
+    <!-- Wallet Options (Structured Buttons) -->
+    <g id="wallet-buttons">
+      <!-- Primary Connect Button -->
+      <g transform="translate(600, 530)">
+        <rect x="-180" y="-30" width="360" height="65" rx="12" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+        <text x="-30" y="8" font-size="22" font-weight="bold" fill="white" text-anchor="middle" font-family="Arial, sans-serif">👛 Connect SUI Wallet</text>
+      </g>
+      
+      <!-- Secondary Info -->
+      <text x="600" y="625" font-size="13" fill="rgba(255,255,255,0.7)" text-anchor="middle" font-family="Arial, sans-serif">Supported: Sui Wallet, Suiet, Ethos</text>
+      
+      <!-- Help Link -->
+      <g transform="translate(600, 660)">
+        <rect x="-80" y="-15" width="160" height="30" rx="6" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+        <text x="0" y="5" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle" font-family="Arial, sans-serif">❓ Need Help?</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <text x="600" y="770" font-size="13" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-family="Arial, sans-serif">🏆 Tatum x Walrus Hackathon 2026 • Secure • Decentralized • Private</text>
+</svg>

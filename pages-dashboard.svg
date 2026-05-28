@@ -1,94 +1,106 @@
 <svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
+  <!-- Background Gradient - PERSIS seperti Colorpegga -->
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a0a2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0f3443;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#845EC2;stop-opacity:1" />
-      <stop offset="20%" style="stop-color:#2C73D2;stop-opacity:1" />
-      <stop offset="40%" style="stop-color:#008BCF;stop-opacity:1" />
-      <stop offset="60%" style="stop-color:#00898A;stop-opacity:1" />
-      <stop offset="80%" style="stop-color:#008E9B;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#008F7A;stop-opacity:1" />
+    <linearGradient id="bgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5B4E9D;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#4A7BC9;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#3498D4;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#3DBCC4;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7EEBD8;stop-opacity:1" />
     </linearGradient>
   </defs>
   
   <rect width="1400" height="900" fill="url(#bgGrad)"/>
   
   <!-- Header -->
-  <rect x="0" y="0" width="1400" height="80" fill="rgba(26,26,62,0.6)" stroke="rgba(132,94,194,0.2)" stroke-width="1"/>
+  <rect x="0" y="0" width="1400" height="80" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
   
   <!-- Walrus Icon in Header -->
-  <g transform="translate(30, 15) scale(0.5)">
-    <ellipse cx="62" cy="75" rx="35" ry="42" fill="#A8E6E1" stroke="#000" stroke-width="1.5"/>
-    <ellipse cx="62" cy="40" rx="28" ry="26" fill="#A8E6E1" stroke="#000" stroke-width="1.5"/>
-    <path d="M 34 40 Q 34 22, 62 22 Q 90 22, 90 40" fill="#000"/>
-    <rect x="42" y="36" width="14" height="12" rx="1.5" fill="#1A1A1A" stroke="#000" stroke-width="1.5"/>
-    <rect x="68" y="36" width="14" height="12" rx="1.5" fill="#1A1A1A" stroke="#000" stroke-width="1.5"/>
-    <rect x="56" y="41" width="12" height="3" fill="#000"/>
-    <ellipse cx="62" cy="54" rx="4" ry="3.5" fill="#000"/>
-    <path d="M 54 58 Q 52 68, 50 78 Q 49 81, 51 83 Q 53 81, 54 78 Q 56 68, 57 58 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
-    <path d="M 70 58 Q 72 68, 74 78 Q 75 81, 73 83 Q 71 81, 70 78 Q 68 68, 67 58 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+  <g transform="translate(30, 10) scale(0.35)">
+    <ellipse cx="200" cy="240" rx="140" ry="120" fill="#7FDBDB" stroke="#000000" stroke-width="3"/>
+    <ellipse cx="200" cy="140" rx="120" ry="110" fill="#7FDBDB" stroke="#000000" stroke-width="3"/>
+    <path d="M 80 140 Q 80 80, 200 60 Q 320 80, 320 140" fill="#000000" stroke="#000000" stroke-width="2"/>
+    <rect x="100" y="130" width="70" height="45" rx="5" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+    <line x1="110" y1="135" x2="155" y2="165" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+    <rect x="230" y="130" width="70" height="45" rx="5" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+    <line x1="240" y1="135" x2="285" y2="165" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+    <rect x="170" y="148" width="60" height="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2"/>
+    <ellipse cx="200" cy="195" rx="8" ry="10" fill="#000000"/>
+    <path d="M 170 210 Q 200 225, 230 210" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M 80 180 Q 40 175, 20 170" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 75 200 Q 30 200, 5 200" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 80 220 Q 40 225, 20 235" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 320 180 Q 360 175, 380 170" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 325 200 Q 370 200, 395 200" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 320 220 Q 360 225, 380 235" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 165 225 Q 160 280, 165 330 Q 168 345, 180 345 Q 185 340, 182 330 Q 178 280, 180 225 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+    <path d="M 235 225 Q 240 280, 235 330 Q 232 345, 220 345 Q 215 340, 218 330 Q 222 280, 220 225 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
   </g>
   
-  <text x="100" y="50" font-family="Arial, sans-serif" font-size="28" fill="#fff" font-weight="bold">WalrusVault</text>
-  <text x="1320" y="50" font-family="Arial, sans-serif" font-size="14" fill="#008F7A" text-anchor="end">0x1234...abcd</text>
+  <text x="120" y="50" font-family="Arial, sans-serif" font-size="28" fill="#fff" font-weight="bold">WalrusVault</text>
+  <text x="1320" y="50" font-family="Arial, sans-serif" font-size="14" fill="#7EEBD8" text-anchor="end">0x1234...abcd</text>
   
   <!-- Sidebar -->
-  <rect x="0" y="80" width="200" height="820" fill="rgba(26,26,62,0.4)" stroke="rgba(132,94,194,0.1)" stroke-width="1"/>
+  <rect x="0" y="80" width="200" height="820" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
   
   <!-- Tabs -->
   <g transform="translate(20, 120)">
-    <rect x="0" y="0" width="160" height="50" rx="8" fill="url(#accentGrad)"/>
+    <defs>
+      <linearGradient id="tabGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5B4E9D;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#3498D4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#7EEBD8;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="160" height="50" rx="8" fill="url(#tabGrad)"/>
     <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">📤 Upload</text>
     
-    <rect x="0" y="70" width="160" height="50" rx="8" fill="rgba(132,94,194,0.2)"/>
-    <text x="80" y="105" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">📁 Files</text>
+    <rect x="0" y="70" width="160" height="50" rx="8" fill="rgba(255,255,255,0.1)"/>
+    <text x="80" y="105" font-family="Arial, sans-serif" font-size="14" fill="#ccc" text-anchor="middle">📁 Files</text>
     
-    <rect x="0" y="140" width="160" height="50" rx="8" fill="rgba(132,94,194,0.2)"/>
-    <text x="80" y="175" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">📥 Import</text>
+    <rect x="0" y="140" width="160" height="50" rx="8" fill="rgba(255,255,255,0.1)"/>
+    <text x="80" y="175" font-family="Arial, sans-serif" font-size="14" fill="#ccc" text-anchor="middle">📥 Import</text>
   </g>
   
   <!-- Main Content - Upload Tab -->
   <g transform="translate(250, 120)">
     <!-- Upload Card -->
-    <rect x="0" y="0" width="1100" height="350" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(132,94,194,0.3)" stroke-width="2"/>
+    <rect x="0" y="0" width="1100" height="350" rx="16" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
     
     <text x="550" y="40" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">📤 Upload File</text>
-    <text x="550" y="70" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Your wallet signs the encryption — no password needed</text>
+    <text x="550" y="70" font-family="Arial, sans-serif" font-size="14" fill="#ddd" text-anchor="middle">Your wallet signs the encryption — no password needed</text>
     
     <!-- Drag Drop Area -->
-    <rect x="50" y="100" width="1000" height="180" rx="12" fill="rgba(132,94,194,0.1)" stroke="rgba(132,94,194,0.3)" stroke-width="2" stroke-dasharray="5,5"/>
-    <text x="550" y="160" font-family="Arial, sans-serif" font-size="48" fill="#845EC2" text-anchor="middle">⬆️</text>
+    <rect x="50" y="100" width="1000" height="180" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="550" y="160" font-family="Arial, sans-serif" font-size="48" fill="#7EEBD8" text-anchor="middle">⬆️</text>
     <text x="550" y="210" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">Drag and drop your file here</text>
-    <text x="550" y="240" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">or click to browse</text>
+    <text x="550" y="240" font-family="Arial, sans-serif" font-size="14" fill="#ddd" text-anchor="middle">or click to browse</text>
   </g>
   
   <!-- File List Section -->
   <g transform="translate(250, 500)">
     <!-- Files Card -->
-    <rect x="0" y="0" width="1100" height="350" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(132,94,194,0.3)" stroke-width="2"/>
+    <rect x="0" y="0" width="1100" height="350" rx="16" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
     
     <text x="550" y="40" font-family="Arial, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="bold">📁 Your Files</text>
     
     <!-- File Item 1 -->
-    <rect x="30" y="70" width="1040" height="70" rx="8" fill="rgba(132,94,194,0.1)" stroke="rgba(132,94,194,0.2)" stroke-width="1"/>
+    <rect x="30" y="70" width="1040" height="70" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
     <text x="50" y="105" font-family="Arial, sans-serif" font-size="14" fill="#fff" font-weight="600">document.pdf</text>
-    <text x="50" y="125" font-family="Arial, sans-serif" font-size="12" fill="#aaa">2.4 MB • Uploaded 2 hours ago</text>
-    <text x="1030" y="105" font-family="Arial, sans-serif" font-size="14" fill="#008F7A" text-anchor="end">📥 Download</text>
+    <text x="50" y="125" font-family="Arial, sans-serif" font-size="12" fill="#bbb">2.4 MB • Uploaded 2 hours ago</text>
+    <text x="1030" y="105" font-family="Arial, sans-serif" font-size="14" fill="#7EEBD8" text-anchor="end">📥 Download</text>
     
     <!-- File Item 2 -->
-    <rect x="30" y="160" width="1040" height="70" rx="8" fill="rgba(132,94,194,0.1)" stroke="rgba(132,94,194,0.2)" stroke-width="1"/>
+    <rect x="30" y="160" width="1040" height="70" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
     <text x="50" y="195" font-family="Arial, sans-serif" font-size="14" fill="#fff" font-weight="600">presentation.pptx</text>
-    <text x="50" y="215" font-family="Arial, sans-serif" font-size="12" fill="#aaa">5.1 MB • Uploaded 1 day ago</text>
-    <text x="1030" y="195" font-family="Arial, sans-serif" font-size="14" fill="#008F7A" text-anchor="end">📥 Download</text>
+    <text x="50" y="215" font-family="Arial, sans-serif" font-size="12" fill="#bbb">5.1 MB • Uploaded 1 day ago</text>
+    <text x="1030" y="195" font-family="Arial, sans-serif" font-size="14" fill="#7EEBD8" text-anchor="end">📥 Download</text>
     
     <!-- File Item 3 -->
-    <rect x="30" y="250" width="1040" height="70" rx="8" fill="rgba(132,94,194,0.1)" stroke="rgba(132,94,194,0.2)" stroke-width="1"/>
+    <rect x="30" y="250" width="1040" height="70" rx="8" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
     <text x="50" y="285" font-family="Arial, sans-serif" font-size="14" fill="#fff" font-weight="600">data.xlsx</text>
-    <text x="50" y="305" font-family="Arial, sans-serif" font-size="12" fill="#aaa">1.8 MB • Uploaded 3 days ago</text>
-    <text x="1030" y="285" font-family="Arial, sans-serif" font-size="14" fill="#008F7A" text-anchor="end">📥 Download</text>
+    <text x="50" y="305" font-family="Arial, sans-serif" font-size="12" fill="#bbb">1.8 MB • Uploaded 3 days ago</text>
+    <text x="1030" y="285" font-family="Arial, sans-serif" font-size="14" fill="#7EEBD8" text-anchor="end">📥 Download</text>
   </g>
 </svg>

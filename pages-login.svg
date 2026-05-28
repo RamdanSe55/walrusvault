@@ -1,17 +1,13 @@
 <svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
+  <!-- Background Gradient - PERSIS seperti Colorpegga -->
   <defs>
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1a0a2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0f3443;stop-opacity:1" />
-    </linearGradient>
-    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#845EC2;stop-opacity:1" />
-      <stop offset="20%" style="stop-color:#2C73D2;stop-opacity:1" />
-      <stop offset="40%" style="stop-color:#008BCF;stop-opacity:1" />
-      <stop offset="60%" style="stop-color:#00898A;stop-opacity:1" />
-      <stop offset="80%" style="stop-color:#008E9B;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#008F7A;stop-opacity:1" />
+    <linearGradient id="bgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5B4E9D;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#4A7BC9;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#3498D4;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#3DBCC4;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7EEBD8;stop-opacity:1" />
     </linearGradient>
   </defs>
   
@@ -19,62 +15,83 @@
   
   <!-- Left side - Branding with Walrus Icon -->
   <g transform="translate(100, 150)">
-    <circle cx="50" cy="50" r="50" fill="url(#accentGrad)" opacity="0.2"/>
-    
     <!-- Walrus Icon -->
-    <g transform="translate(0, 0) scale(0.8)">
-      <!-- Body -->
-      <ellipse cx="62" cy="75" rx="35" ry="42" fill="#A8E6E1" stroke="#000" stroke-width="1.5"/>
-      <!-- Head -->
-      <ellipse cx="62" cy="40" rx="28" ry="26" fill="#A8E6E1" stroke="#000" stroke-width="1.5"/>
-      <path d="M 34 40 Q 34 22, 62 22 Q 90 22, 90 40" fill="#000"/>
-      <!-- Sunglasses -->
-      <rect x="42" y="36" width="14" height="12" rx="1.5" fill="#1A1A1A" stroke="#000" stroke-width="1.5"/>
-      <rect x="68" y="36" width="14" height="12" rx="1.5" fill="#1A1A1A" stroke="#000" stroke-width="1.5"/>
-      <rect x="56" y="41" width="12" height="3" fill="#000"/>
-      <!-- Nose -->
-      <ellipse cx="62" cy="54" rx="4" ry="3.5" fill="#000"/>
-      <!-- Tusks -->
-      <path d="M 54 58 Q 52 68, 50 78 Q 49 81, 51 83 Q 53 81, 54 78 Q 56 68, 57 58 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
-      <path d="M 70 58 Q 72 68, 74 78 Q 75 81, 73 83 Q 71 81, 70 78 Q 68 68, 67 58 Z" fill="#FFF" stroke="#000" stroke-width="1.5"/>
+    <g transform="translate(0, 0) scale(0.6)">
+      <!-- Tubuh Walrus -->
+      <ellipse cx="200" cy="240" rx="140" ry="120" fill="#7FDBDB" stroke="#000000" stroke-width="3"/>
+      <!-- Kepala -->
+      <ellipse cx="200" cy="140" rx="120" ry="110" fill="#7FDBDB" stroke="#000000" stroke-width="3"/>
+      <!-- Kepala Hitam (Cap) -->
+      <path d="M 80 140 Q 80 80, 200 60 Q 320 80, 320 140" fill="#000000" stroke="#000000" stroke-width="2"/>
+      <!-- Kacamata Kiri -->
+      <rect x="100" y="130" width="70" height="45" rx="5" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+      <line x1="110" y1="135" x2="155" y2="165" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <!-- Kacamata Kanan -->
+      <rect x="230" y="130" width="70" height="45" rx="5" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+      <line x1="240" y1="135" x2="285" y2="165" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <!-- Bridge -->
+      <rect x="170" y="148" width="60" height="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Hidung -->
+      <ellipse cx="200" cy="195" rx="8" ry="10" fill="#000000"/>
+      <!-- Mulut -->
+      <path d="M 170 210 Q 200 225, 230 210" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <!-- Kumis Kiri -->
+      <path d="M 80 180 Q 40 175, 20 170" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 75 200 Q 30 200, 5 200" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 80 220 Q 40 225, 20 235" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Kumis Kanan -->
+      <path d="M 320 180 Q 360 175, 380 170" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 325 200 Q 370 200, 395 200" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 320 220 Q 360 225, 380 235" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Taring Kiri -->
+      <path d="M 165 225 Q 160 280, 165 330 Q 168 345, 180 345 Q 185 340, 182 330 Q 178 280, 180 225 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+      <!-- Taring Kanan -->
+      <path d="M 235 225 Q 240 280, 235 330 Q 232 345, 220 345 Q 215 340, 218 330 Q 222 280, 220 225 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
     </g>
     
     <text x="50" y="180" font-family="Arial, sans-serif" font-size="48" fill="#fff" text-anchor="middle" font-weight="bold">WalrusVault</text>
-    <text x="50" y="220" font-family="Arial, sans-serif" font-size="18" fill="#008F7A" text-anchor="middle">Decentralized Storage</text>
-    <text x="50" y="250" font-family="Arial, sans-serif" font-size="16" fill="#aaa" text-anchor="middle">Powered by SUI Wallet</text>
+    <text x="50" y="220" font-family="Arial, sans-serif" font-size="18" fill="#7EEBD8" text-anchor="middle">Decentralized Storage</text>
+    <text x="50" y="250" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">Powered by SUI Wallet</text>
   </g>
   
   <!-- Right side - Login Form -->
   <g transform="translate(650, 150)">
     <!-- Card -->
-    <rect x="0" y="0" width="450" height="500" rx="16" fill="rgba(26,26,62,0.8)" stroke="rgba(132,94,194,0.3)" stroke-width="2"/>
+    <rect x="0" y="0" width="450" height="500" rx="16" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
     
     <!-- Title -->
     <text x="225" y="50" font-family="Arial, sans-serif" font-size="32" fill="#fff" text-anchor="middle" font-weight="bold">Connect Wallet</text>
-    <text x="225" y="85" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Sign in with your SUI wallet</text>
+    <text x="225" y="85" font-family="Arial, sans-serif" font-size="14" fill="#ddd" text-anchor="middle">Sign in with your SUI wallet</text>
     
     <!-- Divider -->
-    <line x1="30" y1="110" x2="420" y2="110" stroke="rgba(132,94,194,0.2)" stroke-width="1"/>
+    <line x1="30" y1="110" x2="420" y2="110" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
     
     <!-- Wallet Info Box -->
-    <rect x="30" y="140" width="390" height="80" rx="12" fill="rgba(132,94,194,0.1)" stroke="rgba(132,94,194,0.3)" stroke-width="2"/>
-    <text x="225" y="165" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Supported Wallets:</text>
+    <rect x="30" y="140" width="390" height="80" rx="12" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+    <text x="225" y="165" font-family="Arial, sans-serif" font-size="14" fill="#ddd" text-anchor="middle">Supported Wallets:</text>
     <text x="225" y="195" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle">🔐 Sui Wallet • 🦊 Ethos • 💼 Ledger</text>
     
     <!-- Connect Button -->
-    <rect x="30" y="250" width="390" height="60" rx="12" fill="url(#accentGrad)" stroke="none"/>
+    <defs>
+      <linearGradient id="btnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#5B4E9D;stop-opacity:1" />
+        <stop offset="50%" style="stop-color:#3498D4;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#7EEBD8;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="30" y="250" width="390" height="60" rx="12" fill="url(#btnGrad)" stroke="none"/>
     <text x="225" y="290" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">🔗 Connect SUI Wallet</text>
     
     <!-- Network Info -->
-    <rect x="30" y="330" width="390" height="60" rx="12" fill="rgba(0,143,122,0.1)" stroke="rgba(0,143,122,0.3)" stroke-width="2"/>
-    <text x="225" y="355" font-family="Arial, sans-serif" font-size="14" fill="#aaa" text-anchor="middle">Network: SUI Testnet</text>
-    <text x="225" y="380" font-family="Arial, sans-serif" font-size="12" fill="#008F7A" text-anchor="middle">Need testnet SUI? Get from faucet</text>
+    <rect x="30" y="330" width="390" height="60" rx="12" fill="rgba(126,235,216,0.15)" stroke="rgba(126,235,216,0.3)" stroke-width="2"/>
+    <text x="225" y="355" font-family="Arial, sans-serif" font-size="14" fill="#ddd" text-anchor="middle">Network: SUI Testnet</text>
+    <text x="225" y="380" font-family="Arial, sans-serif" font-size="12" fill="#7EEBD8" text-anchor="middle">Need testnet SUI? Get from faucet</text>
     
     <!-- Footer -->
-    <text x="225" y="470" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">No password needed • Wallet signs all transactions</text>
+    <text x="225" y="470" font-family="Arial, sans-serif" font-size="12" fill="#999" text-anchor="middle">No password needed • Wallet signs all transactions</text>
   </g>
   
   <!-- Decorative elements -->
-  <circle cx="150" cy="700" r="100" fill="url(#accentGrad)" opacity="0.05"/>
-  <circle cx="1050" cy="100" r="80" fill="url(#accentGrad)" opacity="0.05"/>
+  <circle cx="150" cy="700" r="100" fill="#7EEBD8" opacity="0.05"/>
+  <circle cx="1050" cy="100" r="80" fill="#5B4E9D" opacity="0.05"/>
 </svg>

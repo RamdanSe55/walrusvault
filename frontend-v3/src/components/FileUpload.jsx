@@ -18,46 +18,54 @@ export default function FileUpload({ walletAddress, onUpload, uploadProgress }) 
       return
     }
 
-    // Check file size (max 50MB)
-    const maxSize = 50 * 1024 * 1024
+    // Check file size (max 10MB for mobile compatibility)
+    const maxSize = 10 * 1024 * 1024
     if (selectedFile.size > maxSize) {
-      alert(`File too large. Max size: 50MB. Your file: ${(selectedFile.size / 1024 / 1024).toFixed(2)}MB`)
+      alert(`File too large. Max size: 10MB. Your file: ${(selectedFile.size / 1024 / 1024).toFixed(2)}MB`)
       return
     }
 
+    console.log('[FileUpload] Starting upload:', selectedFile.name, 'Size:', selectedFile.size)
     setUploading(true)
-    try {
-      const reader = new FileReader()
-      reader.onerror = () => {
-        console.error('FileReader error:', reader.error)
-        alert('Failed to read file: ' + reader.error)
-        setUploading(false)
-      }
-      reader.onload = async (e) => {
-        try {
-          const fileData = e.target.result.split(',')[1] // Get base64
-          if (!fileData) {
-            alert('Failed to encode file')
-            setUploading(false)
-            return
-          }
-          const mockSignature = 'sig_' + Date.now()
-          console.log('Uploading file:', selectedFile.name, 'Size:', selectedFile.size, 'Base64 length:', fileData.length)
-          await onUpload(selectedFile.name, fileData, mockSignature)
-          setSelectedFile(null)
-        } catch (error) {
-          console.error('Upload error:', error)
-          alert('Upload failed: ' + error.message)
-        } finally {
-          setUploading(false)
-        }
-      }
-      reader.readAsDataURL(selectedFile)
-    } catch (error) {
-      console.error('Upload error:', error)
-      alert('Upload failed: ' + error.message)
+    
+    const reader = new FileReader()
+    
+    reader.onerror = (error) => {
+      console.error('[FileUpload] FileReader error:', error)
+      alert('Failed to read file. Please try again.')
       setUploading(false)
     }
+    
+    reader.onload = async (e) => {
+      try {
+        console.log('[FileUpload] File read complete')
+        const result = e.target.result
+        if (!result || typeof result !== 'string') {
+          throw new Error('Invalid file data')
+        }
+        
+        const fileData = result.split(',')[1]
+        if (!fileData) {
+          throw new Error('Failed to encode file to base64')
+        }
+        
+        console.log('[FileUpload] Base64 encoded, length:', fileData.length)
+        const mockSignature = 'sig_' + Date.now()
+        
+        console.log('[FileUpload] Calling onUpload...')
+        await onUpload(selectedFile.name, fileData, mockSignature)
+        
+        console.log('[FileUpload] Upload complete!')
+        setSelectedFile(null)
+        setUploading(false)
+      } catch (error) {
+        console.error('[FileUpload] Upload error:', error)
+        alert('Upload failed: ' + (error.message || 'Unknown error'))
+        setUploading(false)
+      }
+    }
+    
+    reader.readAsDataURL(selectedFile)
   }
 
   return (

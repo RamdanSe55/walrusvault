@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WalrusVault - Dark & Light Mode Showcase</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .mode-toggle {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .toggle-btn {
+            padding: 10px 20px;
+            border: 2px solid;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Dark Mode */
+        body.dark-mode {
+            background: linear-gradient(135deg, #1a0a2e 0%, #0f3443 100%);
+            color: #fff;
+        }
+        
+        body.dark-mode .header {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode .toggle-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+        
+        body.dark-mode .toggle-btn.active {
+            background: linear-gradient(135deg, #5B4E9D, #3498D4);
+            border-color: #7EEBD8;
+        }
+        
+        body.dark-mode .gallery-item h3 {
+            color: #fff;
+        }
+        
+        body.dark-mode .gallery-item p {
+            color: #ddd;
+        }
+        
+        /* Light Mode */
+        body.light-mode {
+            background: linear-gradient(135deg, #E8D5F2 0%, #E8FFFE 100%);
+            color: #1a1a1a;
+        }
+        
+        body.light-mode .header {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(91, 78, 157, 0.2);
+        }
+        
+        body.light-mode .toggle-btn {
+            background: rgba(91, 78, 157, 0.1);
+            color: #1a1a1a;
+            border-color: rgba(91, 78, 157, 0.3);
+        }
+        
+        body.light-mode .toggle-btn.active {
+            background: linear-gradient(135deg, #5B4E9D, #3498D4);
+            color: #fff;
+            border-color: #7EEBD8;
+        }
+        
+        body.light-mode .gallery-item h3 {
+            color: #1a1a1a;
+        }
+        
+        body.light-mode .gallery-item p {
+            color: #555;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .gallery-item-info {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .gallery-item h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+        
+        .gallery-item p {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin: 40px 0 20px 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        
+        body.dark-mode .section-title {
+            border-bottom-color: #7EEBD8;
+        }
+        
+        body.light-mode .section-title {
+            border-bottom-color: #3498D4;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid;
+        }
+        
+        body.dark-mode .footer {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        body.light-mode .footer {
+            border-top-color: rgba(91, 78, 157, 0.2);
+        }
+        
+        .footer p {
+            font-size: 14px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>🐋 WalrusVault</h1>
+                <p>Dark & Light Mode Showcase</p>
+            </div>
+            <div class="mode-toggle">
+                <button class="toggle-btn active" onclick="setMode('dark')">🌙 Dark Mode</button>
+                <button class="toggle-btn" onclick="setMode('light')">☀️ Light Mode</button>
+            </div>
+        </div>
+        
+        <!-- Dark Mode Section -->
+        <div id="dark-section">
+            <h2 class="section-title">🌙 Dark Mode - Premium Look</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="pages-login.svg" alt="Login Page - Dark Mode">
+                    <div class="gallery-item-info">
+                        <h3>Login Page</h3>
+                        <p>Connect your SUI wallet with a sleek dark interface. Gradient flows from purple to mint green.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="pages-dashboard.svg" alt="Dashboard - Dark Mode">
+                    <div class="gallery-item-info">
+                        <h3>Dashboard</h3>
+                        <p>Upload and manage your encrypted files. Walrus icon in header for brand consistency.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="pages-import.svg" alt="Import Page - Dark Mode">
+                    <div class="gallery-item-info">
+                        <h3>Google Drive Import</h3>
+                        <p>Bridge Web2 to Web3. Import files from Google Drive and encrypt them on Walrus.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="pages-architecture.svg" alt="Architecture - Dark Mode">
+                    <div class="gallery-item-info">
+                        <h3>System Architecture</h3>
+                        <p>Complete tech stack: React Frontend, Express Backend, Walrus Storage, SUI Blockchain.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="walrusvault-banner.svg" alt="Banner - Dark Mode">
+                    <div class="gallery-item-info">
+                        <h3>Project Banner</h3>
+                        <p>Marketing banner with all features and tech stack. Perfect for GitHub README.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="walrus-icon.svg" alt="Walrus Icon">
+                    <div class="gallery-item-info">
+                        <h3>Walrus Icon</h3>
+                        <p>Cool mascot with sunglasses. Used across all pages for brand identity.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Light Mode Section -->
+        <div id="light-section" style="display: none;">
+            <h2 class="section-title">☀️ Light Mode - Clean & Bright</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="pages-login-light.svg" alt="Login Page - Light Mode">
+                    <div class="gallery-item-info">
+                        <h3>Login Page</h3>
+                        <p>Same functionality, light gradient. Perfect for daytime browsing.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="pages-dashboard-light.svg" alt="Dashboard - Light Mode">
+                    <div class="gallery-item-info">
+                        <h3>Dashboard</h3>
+                        <p>Bright interface with excellent contrast. Easy on the eyes.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="pages-import-light.svg" alt="Import Page - Light Mode">
+                    <div class="gallery-item-info">
+                        <h3>Google Drive Import</h3>
+                        <p>Light mode version with same features and functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="pages-architecture-light.svg" alt="Architecture - Light Mode">
+                    <div class="gallery-item-info">
+                        <h3>System Architecture</h3>
+                        <p>Architecture diagram in light mode for presentations.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="walrusvault-banner-light.svg" alt="Banner - Light Mode">
+                    <div class="gallery-item-info">
+                        <h3>Project Banner</h3>
+                        <p>Light mode banner for bright backgrounds.</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="walrus-icon.svg" alt="Walrus Icon">
+                    <div class="gallery-item-info">
+                        <h3>Walrus Icon</h3>
+                        <p>Same cool mascot works in both modes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>WalrusVault</strong> - Decentralized File Storage with SUI Wallet Authentication</p>
+            <p>🏆 Tatum x Walrus Hackathon 2026</p>
+            <p>📦 GitHub: <a href="https://github.com/RamdanSe55/walrusvault" style="color: inherit; text-decoration: underline;">github.com/RamdanSe55/walrusvault</a></p>
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.7;">
+                Gradient: Purple (#5B4E9D) → Blue (#3498D4) → Mint (#7EEBD8) | 
+                Font: Dark text on light, White text on dark | 
+                Icon: Cool Walrus with sunglasses
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function setMode(mode) {
+            const body = document.body;
+            const darkSection = document.getElementById('dark-section');
+            const lightSection = document.getElementById('light-section');
+            const buttons = document.querySelectorAll('.toggle-btn');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            if (mode === 'dark') {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                darkSection.style.display = 'block';
+                lightSection.style.display = 'none';
+                buttons[0].classList.add('active');
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                darkSection.style.display = 'none';
+                lightSection.style.display = 'block';
+                buttons[1].classList.add('active');
+            }
+            
+            localStorage.setItem('walrusvault-mode', mode);
+        }
+        
+        // Load saved mode
+        const savedMode = localStorage.getItem('walrusvault-mode') || 'dark';
+        setMode(savedMode);
+    </script>
+</body>
+</html>

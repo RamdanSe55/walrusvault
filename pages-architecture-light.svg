@@ -1,0 +1,130 @@
+<svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient - LIGHT MODE -->
+  <defs>
+    <linearGradient id="bgGradLight" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#E8D5F2;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#D4E5F7;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#C8F0FF;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#C8F5F0;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#D4F8F5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E8FFFE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1400" height="900" fill="url(#bgGradLight)"/>
+  
+  <!-- Title with Walrus Icon -->
+  <g transform="translate(550, 20)">
+    <!-- Walrus Icon -->
+    <g transform="scale(0.45)">
+      <ellipse cx="200" cy="240" rx="140" ry="120" fill="#7FDBDB" stroke="#000000" stroke-width="3"/>
+      <ellipse cx="200" cy="140" rx="120" ry="110" fill="#7FDBDB" stroke="#000000" stroke-width="3"/>
+      <path d="M 80 140 Q 80 80, 200 60 Q 320 80, 320 140" fill="#000000" stroke="#000000" stroke-width="2"/>
+      <rect x="100" y="130" width="70" height="45" rx="5" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+      <line x1="110" y1="135" x2="155" y2="165" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <rect x="230" y="130" width="70" height="45" rx="5" fill="#000000" stroke="#FFFFFF" stroke-width="4"/>
+      <line x1="240" y1="135" x2="285" y2="165" stroke="#FFFFFF" stroke-width="2" opacity="0.6"/>
+      <rect x="170" y="148" width="60" height="9" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2"/>
+      <ellipse cx="200" cy="195" rx="8" ry="10" fill="#000000"/>
+      <path d="M 170 210 Q 200 225, 230 210" stroke="#000000" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M 80 180 Q 40 175, 20 170" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 75 200 Q 30 200, 5 200" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 80 220 Q 40 225, 20 235" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 320 180 Q 360 175, 380 170" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 325 200 Q 370 200, 395 200" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 320 220 Q 360 225, 380 235" stroke="#000000" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M 165 225 Q 160 280, 165 330 Q 168 345, 180 345 Q 185 340, 182 330 Q 178 280, 180 225 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+      <path d="M 235 225 Q 240 280, 235 330 Q 232 345, 220 345 Q 215 340, 218 330 Q 222 280, 220 225 Z" fill="#FFFFFF" stroke="#000000" stroke-width="2.5"/>
+    </g>
+    <text x="200" y="50" font-family="Arial, sans-serif" font-size="36" fill="#1a1a1a" font-weight="bold">WalrusVault Architecture</text>
+  </g>
+  
+  <!-- Frontend Layer -->
+  <g transform="translate(100, 120)">
+    <rect x="0" y="0" width="300" height="200" rx="12" fill="rgba(255,255,255,0.6)" stroke="rgba(91,78,157,0.3)" stroke-width="2"/>
+    <text x="150" y="40" font-family="Arial, sans-serif" font-size="18" fill="#1a1a1a" text-anchor="middle" font-weight="bold">Frontend</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">React + Vite</text>
+    <text x="150" y="95" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Framer Motion</text>
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">SUI Wallet Kit</text>
+    <text x="150" y="145" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Axios HTTP</text>
+    <text x="150" y="170" font-family="Arial, sans-serif" font-size="12" fill="#2C73D2" text-anchor="middle">Port: 3000</text>
+  </g>
+  
+  <!-- Backend Layer -->
+  <g transform="translate(550, 120)">
+    <rect x="0" y="0" width="300" height="200" rx="12" fill="rgba(255,255,255,0.6)" stroke="rgba(91,78,157,0.3)" stroke-width="2"/>
+    <text x="150" y="40" font-family="Arial, sans-serif" font-size="18" fill="#1a1a1a" text-anchor="middle" font-weight="bold">Backend</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Express.js</text>
+    <text x="150" y="95" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">File Encryption</text>
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Signature Verify</text>
+    <text x="150" y="145" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">API Routes</text>
+    <text x="150" y="170" font-family="Arial, sans-serif" font-size="12" fill="#2C73D2" text-anchor="middle">Port: 3001</text>
+  </g>
+  
+  <!-- Storage Layer -->
+  <g transform="translate(1000, 120)">
+    <rect x="0" y="0" width="300" height="200" rx="12" fill="rgba(126,235,216,0.2)" stroke="rgba(52,152,212,0.5)" stroke-width="2"/>
+    <text x="150" y="40" font-family="Arial, sans-serif" font-size="18" fill="#1a1a1a" text-anchor="middle" font-weight="bold">Storage</text>
+    <text x="150" y="70" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Walrus Blobs</text>
+    <text x="150" y="95" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Decentralized</text>
+    <text x="150" y="120" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Encrypted Files</text>
+    <text x="150" y="145" font-family="Arial, sans-serif" font-size="12" fill="#555" text-anchor="middle">Blob IDs</text>
+    <text x="150" y="170" font-family="Arial, sans-serif" font-size="12" fill="#2C73D2" text-anchor="middle">Testnet</text>
+  </g>
+  
+  <!-- Arrows -->
+  <defs>
+    <marker id="arrowheadLight" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3498D4" />
+    </marker>
+  </defs>
+  
+  <line x1="400" y1="220" x2="550" y2="220" stroke="#3498D4" stroke-width="2" marker-end="url(#arrowheadLight)"/>
+  <line x1="850" y1="220" x2="1000" y2="220" stroke="#3498D4" stroke-width="2" marker-end="url(#arrowheadLight)"/>
+  
+  <!-- Blockchain Layer -->
+  <g transform="translate(100, 400)">
+    <rect x="0" y="0" width="1200" height="150" rx="12" fill="rgba(255,255,255,0.5)" stroke="rgba(91,78,157,0.2)" stroke-width="2"/>
+    <text x="600" y="40" font-family="Arial, sans-serif" font-size="18" fill="#1a1a1a" text-anchor="middle" font-weight="bold">SUI Blockchain (Testnet)</text>
+    
+    <!-- Components -->
+    <rect x="50" y="60" width="200" height="70" rx="8" fill="rgba(91,78,157,0.1)" stroke="rgba(91,78,157,0.2)" stroke-width="1"/>
+    <text x="150" y="90" font-family="Arial, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="bold">Smart Contract</text>
+    <text x="150" y="110" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">file_registry.move</text>
+    
+    <rect x="300" y="60" width="200" height="70" rx="8" fill="rgba(91,78,157,0.1)" stroke="rgba(91,78,157,0.2)" stroke-width="1"/>
+    <text x="400" y="90" font-family="Arial, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="bold">Tatum SDK</text>
+    <text x="400" y="110" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">RPC Integration</text>
+    
+    <rect x="550" y="60" width="200" height="70" rx="8" fill="rgba(91,78,157,0.1)" stroke="rgba(91,78,157,0.2)" stroke-width="1"/>
+    <text x="650" y="90" font-family="Arial, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="bold">File Metadata</text>
+    <text x="650" y="110" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">On-Chain Registry</text>
+    
+    <rect x="800" y="60" width="200" height="70" rx="8" fill="rgba(91,78,157,0.1)" stroke="rgba(91,78,157,0.2)" stroke-width="1"/>
+    <text x="900" y="90" font-family="Arial, sans-serif" font-size="12" fill="#1a1a1a" text-anchor="middle" font-weight="bold">Wallet Auth</text>
+    <text x="900" y="110" font-family="Arial, sans-serif" font-size="10" fill="#555" text-anchor="middle">Signature Verify</text>
+  </g>
+  
+  <!-- Data Flow -->
+  <g transform="translate(100, 600)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#1a1a1a" font-weight="bold">Data Flow:</text>
+    
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#555">1. User connects SUI wallet</text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" fill="#555">2. Wallet signs encryption key</text>
+    <text x="0" y="90" font-family="Arial, sans-serif" font-size="12" fill="#555">3. File encrypted with signature</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" fill="#555">4. Encrypted file uploaded to Walrus</text>
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="12" fill="#555">5. Blob ID + metadata registered on SUI</text>
+    <text x="0" y="165" font-family="Arial, sans-serif" font-size="12" fill="#555">6. User can download & decrypt anytime</text>
+  </g>
+  
+  <!-- Security Features -->
+  <g transform="translate(700, 600)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="16" fill="#2C73D2" font-weight="bold">Security:</text>
+    
+    <text x="0" y="40" font-family="Arial, sans-serif" font-size="12" fill="#555">🔐 Wallet-only authentication</text>
+    <text x="0" y="65" font-family="Arial, sans-serif" font-size="12" fill="#555">🔒 End-to-end encryption</text>
+    <text x="0" y="90" font-family="Arial, sans-serif" font-size="12" fill="#555">✓ Signature verification</text>
+    <text x="0" y="115" font-family="Arial, sans-serif" font-size="12" fill="#555">📝 On-chain audit trail</text>
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="12" fill="#555">🌐 Decentralized storage</text>
+  </g>
+</svg>

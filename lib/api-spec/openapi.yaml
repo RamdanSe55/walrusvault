@@ -1,0 +1,446 @@
+openapi: 3.1.0
+info:
+  # Do not change the title, if the title changes, the import paths will be broken
+  title: Api
+  version: 0.1.0
+  description: WalrusVault API - Decentralized file storage with SUI wallet auth
+servers:
+  - url: /api
+    description: Base API path
+tags:
+  - name: health
+    description: Health operations
+  - name: files
+    description: File storage operations
+  - name: logs
+    description: Activity log operations
+  - name: drive
+    description: Google Drive import operations
+paths:
+  /healthz:
+    get:
+      operationId: healthCheck
+      tags: [health]
+      summary: Health check
+      responses:
+        "200":
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/HealthStatus"
+
+  /upload:
+    post:
+      operationId: uploadFile
+      tags: [files]
+      summary: Upload and encrypt a file
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FileUploadInput"
+      responses:
+        "200":
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FileUploadResult"
+        "400":
+          description: Missing required fields
+        "401":
+          description: Invalid signature
+        "413":
+          description: File too large
+
+  /files/{walletAddress}:
+    get:
+      operationId: listFiles
+      tags: [files]
+      summary: List files for a wallet address
+      parameters:
+        - name: walletAddress
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of files
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FileListResult"
+
+  /download:
+    post:
+      operationId: downloadFile
+      tags: [files]
+      summary: Download and decrypt a file
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FileDownloadInput"
+      responses:
+        "200":
+          description: Decrypted file data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FileDownloadResult"
+        "401":
+          description: Invalid signature
+        "404":
+          description: File not found
+
+  /files/{walletAddress}/{blobId}:
+    delete:
+      operationId: deleteFile
+      tags: [files]
+      summary: Delete a file
+      parameters:
+        - name: walletAddress
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: blobId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/FileDeleteInput"
+      responses:
+        "200":
+          description: File deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeleteResult"
+        "401":
+          description: Invalid signature
+        "404":
+          description: File not found
+
+  /stats/{walletAddress}:
+    get:
+      operationId: getStorageStats
+      tags: [files]
+      summary: Get storage stats for a wallet
+      parameters:
+        - name: walletAddress
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Storage statistics
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/StorageStats"
+
+  /logs/{walletAddress}:
+    get:
+      operationId: getActivityLogs
+      tags: [logs]
+      summary: Get activity log for a wallet
+      parameters:
+        - name: walletAddress
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Activity log entries
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActivityLogResult"
+
+  /drive/import:
+    post:
+      operationId: importFromDrive
+      tags: [drive]
+      summary: Import a file from Google Drive to WalrusVault
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DriveImportInput"
+      responses:
+        "200":
+          description: File imported successfully
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FileUploadResult"
+        "400":
+          description: Missing required fields
+        "401":
+          description: Invalid signature or access token
+        "413":
+          description: File too large
+
+components:
+  schemas:
+    HealthStatus:
+      type: object
+      properties:
+        status:
+          type: string
+      required:
+        - status
+
+    FileRecord:
+      type: object
+      properties:
+        blobId:
+          type: string
+        fileName:
+          type: string
+        size:
+          type: number
+        sha256Hash:
+          type: ["string", "null"]
+        uploadedAt:
+          type: string
+        source:
+          type: string
+        walrusBlobId:
+          type: ["string", "null"]
+      required:
+        - blobId
+        - fileName
+        - size
+        - sha256Hash
+        - uploadedAt
+        - source
+        - walrusBlobId
+
+    FileUploadInput:
+      type: object
+      properties:
+        fileName:
+          type: string
+        fileData:
+          type: string
+        walletAddress:
+          type: string
+        signature:
+          type: string
+      required:
+        - fileName
+        - fileData
+        - walletAddress
+        - signature
+
+    FileUploadResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+        blobId:
+          type: string
+        fileName:
+          type: string
+        size:
+          type: number
+        sha256Hash:
+          type: string
+        message:
+          type: string
+        walrusBlobId:
+          type: ["string", "null"]
+        source:
+          type: string
+      required:
+        - success
+        - blobId
+        - fileName
+        - size
+        - sha256Hash
+        - message
+        - walrusBlobId
+        - source
+
+    FileListResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+        files:
+          type: array
+          items:
+            $ref: "#/components/schemas/FileRecord"
+        count:
+          type: number
+      required:
+        - success
+        - files
+        - count
+
+    FileDownloadInput:
+      type: object
+      properties:
+        blobId:
+          type: string
+        walletAddress:
+          type: string
+        signature:
+          type: string
+      required:
+        - blobId
+        - walletAddress
+        - signature
+
+    FileDownloadResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+        fileName:
+          type: string
+        fileData:
+          type: string
+        size:
+          type: number
+        sha256Hash:
+          type: string
+        verified:
+          type: boolean
+        source:
+          type: string
+        walrusBlobId:
+          type: ["string", "null"]
+      required:
+        - success
+        - fileName
+        - fileData
+        - size
+        - sha256Hash
+        - verified
+        - source
+        - walrusBlobId
+
+    FileDeleteInput:
+      type: object
+      properties:
+        signature:
+          type: string
+      required:
+        - signature
+
+    DeleteResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+      required:
+        - success
+        - message
+
+    StorageStats:
+      type: object
+      properties:
+        totalFiles:
+          type: number
+        totalSize:
+          type: number
+        totalSizeMb:
+          type: number
+        oldestUpload:
+          type: ["string", "null"]
+        newestUpload:
+          type: ["string", "null"]
+        walrusFiles:
+          type: number
+        localFiles:
+          type: number
+      required:
+        - totalFiles
+        - totalSize
+        - totalSizeMb
+        - oldestUpload
+        - newestUpload
+        - walrusFiles
+        - localFiles
+
+    ActivityLogEntry:
+      type: object
+      properties:
+        id:
+          type: number
+        action:
+          type: string
+        fileName:
+          type: string
+        blobId:
+          type: string
+        size:
+          type: ["number", "null"]
+        createdAt:
+          type: string
+        source:
+          type: ["string", "null"]
+      required:
+        - id
+        - action
+        - fileName
+        - blobId
+        - size
+        - createdAt
+        - source
+
+    ActivityLogResult:
+      type: object
+      properties:
+        success:
+          type: boolean
+        logs:
+          type: array
+          items:
+            $ref: "#/components/schemas/ActivityLogEntry"
+        count:
+          type: number
+      required:
+        - success
+        - logs
+        - count
+
+    DriveImportInput:
+      type: object
+      properties:
+        fileId:
+          type: string
+        fileName:
+          type: string
+        mimeType:
+          type: string
+        accessToken:
+          type: string
+        walletAddress:
+          type: string
+        signature:
+          type: string
+      required:
+        - fileId
+        - fileName
+        - mimeType
+        - accessToken
+        - walletAddress
+        - signature

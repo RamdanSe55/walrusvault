@@ -1,0 +1,39 @@
+================================================================================
+                        WALRUSVAULT - ACCESS LINKS
+================================================================================
+
+PROJECT REPOSITORY:
+https://github.com/RamdanSe55/walrusvault
+
+FRONTEND (Replit):
+https://fdb99ac9-8e70-42b7-86be-723b5a166ba3-00-yctdmyeyyr5l.pike.replit.dev/dashboard
+
+BACKEND API (Cloudflare Tunnel):
+https://stuffed-faculty-consciousness-harry.trycloudflare.com
+
+================================================================================
+
+HOW TO USE:
+1. Open Frontend link in browser
+2. Connect SUI wallet
+3. Upload/Download/Import files
+4. Backend API handles encryption & Walrus storage
+
+FEATURES:
+- Wallet-only authentication (no passwords)
+- End-to-end encryption (AES-256-CBC)
+- Decentralized storage (Walrus)
+- Google Drive import
+- Activity tracking
+- Modern responsive UI
+
+SECURITY:
+- SUI signature verification
+- Client-side encryption
+- Blockchain-backed storage
+- No centralized server
+
+================================================================================
+Last Updated: 2026-05-29
+Hackathon Deadline: 2026-06-06 17:00 UTC
+================================================================================

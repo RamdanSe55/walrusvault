@@ -200,35 +200,7 @@ pnpm dev
 
 ---
 
-## 🎬 Demo Video Script
-
-See [DEMO_VIDEO_SCRIPT.md](DEMO_VIDEO_SCRIPT.md) for complete 2-3 minute demo script.
-
-**Quick Summary:**
-1. Login with SUI wallet
-2. Upload file (encrypted locally)
-3. Download file (decrypted locally)
-4. Import from Google Drive
-5. View activity log
-
 ---
-
-## 🏆 Hackathon Submission
-
-**Tatum x Walrus Hackathon**
-- **Prize:** $2,000
-- **Deadline:** 2026-06-06 17:00 UTC
-- **Criteria:**
-  - Walrus & Tatum Integration (30%) ✅
-  - Technical Quality (30%) ✅
-  - Creativity (20%) ✅
-  - Presentation (20%) ✅
-
----
-
-## 📝 License
-
-MIT License - see LICENSE file for details
 
 ---
 

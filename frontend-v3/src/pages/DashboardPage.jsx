@@ -9,7 +9,7 @@ export default function DashboardPage({ walletAddress, onLogout }) {
   const [files, setFiles] = useState([])
   const [loading, setLoading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0)
-  const [backendUrl] = useState('http://localhost:3001') // Change to your deployed backend URL
+  const [backendUrl] = useState('https://stuffed-faculty-consciousness-harry.trycloudflare.com')
 
   useEffect(() => {
     loadFiles()

@@ -15,12 +15,10 @@
       .font-step { font-family: Arial, sans-serif; font-size: 13px; }
     </style>
     
-    <!-- Animated grid pattern -->
     <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
       <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#00d9ff" stroke-width="0.5" opacity="0.1"/>
     </pattern>
     
-    <!-- Glow filter -->
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
       <feMerge>
@@ -29,139 +27,92 @@
       </feMerge>
     </filter>
     
-    <!-- Blur filter for blobs -->
     <filter id="blur">
       <feGaussianBlur in="SourceGraphic" stdDeviation="40"/>
     </filter>
   </defs>
   
-  <!-- Background -->
   <rect width="1200" height="1400" class="bg-dark"/>
-  
-  <!-- Grid pattern -->
   <rect width="1200" height="1400" fill="url(#grid)"/>
   
-  <!-- Animated blobs -->
   <circle cx="300" cy="350" r="200" fill="#00d9ff" opacity="0.05" filter="url(#blur)"/>
   <circle cx="900" cy="900" r="180" fill="#0ea5e9" opacity="0.05" filter="url(#blur)"/>
   
-  <!-- Top-right controls -->
   <g id="controls">
-    <!-- Language toggle background -->
-    <rect x="950" y="20" width="180" height="40" rx="8" class="bg-card" class="border-color"/>
-    
-    <!-- ID button (active) -->
-    <rect x="960" y="28" width="50" height="24" rx="6" class="text-primary" opacity="0.3"/>
+    <rect x="950" y="20" width="180" height="40" rx="8" class="bg-card border-color"/>
+    <rect x="960" y="28" width="50" height="24" rx="6" fill="#00d9ff" opacity="0.3"/>
     <text x="985" y="45" class="font-badge text-foreground" text-anchor="middle">ID</text>
-    
-    <!-- EN button -->
     <text x="1055" y="45" class="font-badge text-muted" text-anchor="middle">EN</text>
-    
-    <!-- Theme toggle -->
-    <rect x="1080" y="20" width="40" height="40" rx="8" class="bg-card" class="border-color"/>
+    <rect x="1080" y="20" width="40" height="40" rx="8" class="bg-card border-color"/>
     <circle cx="1100" cy="40" r="6" class="text-primary"/>
   </g>
   
-  <!-- Main content container -->
   <g id="content" opacity="0.95">
-    <!-- Logo container -->
     <g id="logo-section">
-      <!-- Logo background -->
-      <rect x="500" y="100" width="200" height="200" rx="16" class="bg-card" class="border-color" opacity="0.5"/>
-      
-      <!-- Walrus icon (geometric diamond) -->
+      <rect x="500" y="100" width="200" height="200" rx="16" class="bg-card border-color" opacity="0.5"/>
       <g transform="translate(600, 200)" class="neon-glow">
-        <!-- Outer diamond -->
         <path d="M 0 -40 L 40 0 L 0 40 L -40 0 Z" stroke="#00d9ff" stroke-width="2" fill="none"/>
-        
-        <!-- Inner diamond -->
         <path d="M 0 -20 L 20 0 L 0 20 L -20 0 Z" stroke="#00d9ff" stroke-width="1.5" fill="#00d9ff" opacity="0.2"/>
-        
-        <!-- Center circle -->
         <circle cx="0" cy="0" r="8" fill="#00d9ff"/>
       </g>
     </g>
     
-    <!-- Title -->
-    <text x="600" y="380" class="font-title text-primary" text-anchor="middle" class="neon-glow">WalrusVault</text>
-    
-    <!-- Subtitle -->
+    <text x="600" y="380" class="font-title text-primary neon-glow" text-anchor="middle">WalrusVault</text>
     <text x="600" y="420" class="font-subtitle text-muted" text-anchor="middle">Decentralized Storage with SUI Wallet</text>
     
-    <!-- Feature badges -->
     <g id="badges">
-      <!-- Badge 1 -->
-      <rect x="280" y="480" width="140" height="32" rx="16" class="bg-card" class="border-color"/>
+      <rect x="280" y="480" width="140" height="32" rx="16" class="bg-card border-color"/>
       <text x="350" y="502" class="font-badge text-muted" text-anchor="middle">🔐 AES-256</text>
       
-      <!-- Badge 2 -->
-      <rect x="480" y="480" width="160" height="32" rx="16" class="bg-card" class="border-color"/>
+      <rect x="480" y="480" width="160" height="32" rx="16" class="bg-card border-color"/>
       <text x="560" y="502" class="font-badge text-muted" text-anchor="middle">🦭 Walrus Protocol</text>
       
-      <!-- Badge 3 -->
-      <rect x="720" y="480" width="160" height="32" rx="16" class="bg-card" class="border-color"/>
+      <rect x="720" y="480" width="160" height="32" rx="16" class="bg-card border-color"/>
       <text x="800" y="502" class="font-badge text-muted" text-anchor="middle">⛓️ SUI Blockchain</text>
       
-      <!-- Badge 4 -->
-      <rect x="960" y="480" width="140" height="32" rx="16" class="bg-card" class="border-color"/>
+      <rect x="960" y="480" width="140" height="32" rx="16" class="bg-card border-color"/>
       <text x="1030" y="502" class="font-badge text-muted" text-anchor="middle">🔒 Zero-knowledge</text>
     </g>
     
-    <!-- Connect card -->
     <g id="connect-card">
-      <rect x="350" y="560" width="500" height="220" rx="16" class="bg-card" class="border-color"/>
-      
-      <!-- Card title -->
+      <rect x="350" y="560" width="500" height="220" rx="16" class="bg-card border-color"/>
       <text x="600" y="600" class="font-button text-foreground" text-anchor="middle">Connect Your SUI Wallet</text>
-      
-      <!-- Card description -->
       <text x="600" y="630" class="font-subtitle text-muted" text-anchor="middle">Secure access with wallet signature verification</text>
-      
-      <!-- Connect button -->
-      <rect x="450" y="660" width="300" height="50" rx="12" class="text-primary" opacity="0.9"/>
+      <rect x="450" y="660" width="300" height="50" rx="12" fill="#00d9ff" opacity="0.9"/>
       <text x="600" y="692" class="font-button text-foreground" text-anchor="middle">Connect Wallet</text>
     </g>
     
-    <!-- How it works - 3 steps -->
     <g id="steps">
-      <!-- Step 1 -->
-      <rect x="250" y="840" width="220" height="140" rx="12" class="bg-card" opacity="0.5" class="border-color"/>
+      <rect x="250" y="840" width="220" height="140" rx="12" class="bg-card border-color" opacity="0.5"/>
       <text x="360" y="880" font-size="32" text-anchor="middle">🔗</text>
       <text x="360" y="910" class="font-step text-foreground" text-anchor="middle" font-weight="bold">Connect Wallet</text>
       <text x="360" y="935" class="font-step text-muted" text-anchor="middle">Link your SUI wallet</text>
       <text x="360" y="955" class="font-step text-muted" text-anchor="middle">for authentication</text>
       
-      <!-- Step 2 -->
-      <rect x="540" y="840" width="220" height="140" rx="12" class="bg-card" opacity="0.5" class="border-color"/>
+      <rect x="540" y="840" width="220" height="140" rx="12" class="bg-card border-color" opacity="0.5"/>
       <text x="650" y="880" font-size="32" text-anchor="middle">✍️</text>
       <text x="650" y="910" class="font-step text-foreground" text-anchor="middle" font-weight="bold">Sign Message</text>
       <text x="650" y="935" class="font-step text-muted" text-anchor="middle">Verify ownership with</text>
       <text x="650" y="955" class="font-step text-muted" text-anchor="middle">cryptographic signature</text>
       
-      <!-- Step 3 -->
-      <rect x="830" y="840" width="220" height="140" rx="12" class="bg-card" opacity="0.5" class="border-color"/>
+      <rect x="830" y="840" width="220" height="140" rx="12" class="bg-card border-color" opacity="0.5"/>
       <text x="940" y="880" font-size="32" text-anchor="middle">🗄️</text>
       <text x="940" y="910" class="font-step text-foreground" text-anchor="middle" font-weight="bold">Store Secure</text>
       <text x="940" y="935" class="font-step text-muted" text-anchor="middle">Files encrypted on</text>
       <text x="940" y="955" class="font-step text-muted" text-anchor="middle">Walrus decentralized</text>
     </g>
     
-    <!-- Footer text -->
     <text x="600" y="1050" class="font-subtitle text-muted" text-anchor="middle">Your files are encrypted with your wallet signature</text>
     <text x="600" y="1075" class="font-subtitle text-muted" text-anchor="middle">No passwords, no servers, just you and Walrus</text>
   </g>
   
-  <!-- Info box at bottom -->
   <g id="info-box">
-    <rect x="200" y="1150" width="800" height="180" rx="12" class="bg-card" class="border-color" opacity="0.7"/>
-    
+    <rect x="200" y="1150" width="800" height="180" rx="12" class="bg-card border-color" opacity="0.7"/>
     <text x="600" y="1185" class="font-button text-primary" text-anchor="middle">WalrusVault Features</text>
-    
     <text x="250" y="1220" class="font-subtitle text-foreground">✓ Wallet-only authentication</text>
     <text x="250" y="1245" class="font-subtitle text-foreground">✓ End-to-end encryption (AES-256-CBC)</text>
     <text x="250" y="1270" class="font-subtitle text-foreground">✓ Decentralized storage (Walrus)</text>
     <text x="250" y="1295" class="font-subtitle text-foreground">✓ Google Drive import bridge</text>
-    
     <text x="750" y="1220" class="font-subtitle text-foreground">✓ Activity tracking</text>
     <text x="750" y="1245" class="font-subtitle text-foreground">✓ Dark/Light mode</text>
     <text x="750" y="1270" class="font-subtitle text-foreground">✓ Multilingual (ID/EN)</text>

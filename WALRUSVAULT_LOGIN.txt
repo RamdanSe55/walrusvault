@@ -6,6 +6,9 @@ PROJECT REPOSITORY:
 https://github.com/RamdanSe55/walrusvault
 
 FRONTEND (Replit):
+https://walrus-drive-sync--haifa123co.replit.app/dashboard
+
+FRONTEND (Alternative):
 https://fdb99ac9-8e70-42b7-86be-723b5a166ba3-00-yctdmyeyyr5l.pike.replit.dev/dashboard
 
 BACKEND API (Cloudflare Tunnel):

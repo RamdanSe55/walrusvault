@@ -6,6 +6,7 @@ import { fileURLToPath } from "url";
 import { db, filesTable, activityLogsTable } from "@workspace/db";
 import { eq, and, desc } from "drizzle-orm";
 import { verifyPersonalMessageSignature } from "@mysten/sui/verify";
+import { registerFileOnChain, grantAccessOnChain, revokeAccessOnChain, transferFileOnChain } from "../lib/tatum-onchain";
 
 const router = Router();
 
@@ -195,6 +196,15 @@ router.post("/upload", async (req, res) => {
       walrusBlobId: walrusBlobId ?? null,
     });
 
+    // Register file metadata on-chain
+    const onChainResult = await registerFileOnChain(
+      sha256Hash,
+      walrusBlobId || blobId,
+      fileName,
+      fileBuffer.length,
+      walletAddress
+    );
+
     await db.insert(activityLogsTable).values({
       walletAddress,
       action: "upload",
@@ -215,6 +225,10 @@ router.post("/upload", async (req, res) => {
         : "File berhasil diunggah ke vault lokal",
       walrusBlobId: walrusBlobId ?? null,
       source,
+      onChain: onChainResult.success ? {
+        transactionHash: onChainResult.transactionHash,
+        fileObjectId: onChainResult.fileObjectId,
+      } : null,
     });
   } catch (error) {
     req.log.error({ error }, "Upload error");

@@ -277,6 +277,31 @@ Complete feature list and technical specifications for WalrusVault decentralized
 
 ---
 
+## 🔗 On-Chain Features (SUI Move Smart Contract)
+
+### File Sharing & Access Control
+- **Grant Access** - Share files with granular permissions
+  - Read-only access
+  - Write access
+  - Admin access
+- **Revoke Access** - Remove access anytime
+- **Transfer Ownership** - Transfer file to another wallet
+- **Time-Limited Access** - Optional expiration dates
+
+### Immutable Metadata Registry
+- **File Registration** - Metadata stored on SUI blockchain
+- **Ownership Proof** - Cryptographic proof of ownership
+- **Audit Trail** - All operations logged as on-chain events
+- **Decentralized** - No single point of failure
+
+### API Endpoints
+- `POST /api/upload` - Upload file (auto-registers on-chain)
+- `POST /api/sharing/grant` - Grant access to wallet
+- `POST /api/sharing/revoke` - Revoke access
+- `POST /api/sharing/transfer` - Transfer ownership
+
+---
+
 ## 🌟 Unique Selling Points
 
 1. **No Passwords** - Wallet-only authentication

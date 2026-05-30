@@ -29,12 +29,14 @@ Technical deep-dive into WalrusVault system architecture, design decisions, and 
 │  │  - /api/download (file download)                      │ │
 │  │  - /api/files (list files)                            │ │
 │  │  - /api/tatum/* (analytics)                           │ │
+│  │  - /api/sharing/* (file sharing & access control)    │ │
 │  └────────────────────────────────────────────────────────┘ │
 │  ┌────────────────────────────────────────────────────────┐ │
 │  │  Business Logic Layer                                  │ │
 │  │  - SUI Signature Verification                         │ │
 │  │  - Walrus Integration                                 │ │
 │  │  - Tatum RPC Client                                   │ │
+│  │  - On-Chain Registry (SUI Move)                       │ │
 │  │  - Activity Logging                                   │ │
 │  └────────────────────────────────────────────────────────┘ │
 │  ┌────────────────────────────────────────────────────────┐ │
@@ -54,6 +56,15 @@ Technical deep-dive into WalrusVault system architecture, design decisions, and 
 │ - Aggregator   │  │ - Txs      │  │ - Activity     │
 │ - Blob Storage │  │ - Stats    │  │                │
 └────────────────┘  └────────────┘  └────────────────┘
+                    ┌────────────────┐
+                    │ SUI Blockchain │
+                    │  (Testnet)     │
+                    │                │
+                    │ - file_registry│
+                    │   module       │
+                    │ - FileMetadata │
+                    │ - AccessGrant  │
+                    └────────────────┘
 ```
 
 ---

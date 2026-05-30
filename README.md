@@ -52,6 +52,13 @@ WalrusVault is a decentralized file storage platform that combines:
 - ✅ Transaction history
 - ✅ Activity statistics
 
+### On-Chain Features (SUI Move Smart Contract)
+- ✅ Immutable file metadata registry
+- ✅ Decentralized ownership proof
+- ✅ File sharing & access control (read/write/admin)
+- ✅ Ownership transfer
+- ✅ On-chain audit trail via events
+
 ---
 
 ## 🏗️ Architecture

@@ -308,6 +308,15 @@ async function verifySignature(
 - [x] Redundant copies
 - [x] Blockchain-backed
 
+### On-Chain Security (SUI Move Smart Contract)
+- [x] Immutable metadata registry
+- [x] Cryptographic ownership proof
+- [x] Granular access control (read/write/admin)
+- [x] Time-limited access grants
+- [x] Immutable audit trail (events)
+- [x] No private key exposure
+- [x] Formal verification ready
+
 ---
 
 ## 📊 Security Metrics

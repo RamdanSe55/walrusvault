@@ -2,11 +2,13 @@ import { TatumSDK, Network, Sui } from "@tatum/sdk";
 
 // Tatum RPC configuration
 const TATUM_API_KEY = process.env["TATUM_API_KEY"] || "";
+const TATUM_RPC_URL = process.env["TATUM_RPC_URL"] || "https://sui-testnet.gateway.tatum.io";
 
 let tatumClient: Sui | null = null;
 
 /**
  * Initialize Tatum SDK for SUI blockchain
+ * Uses Tatum testnet gateway: https://sui-testnet.gateway.tatum.io
  */
 export async function initTatumClient(): Promise<Sui> {
   if (tatumClient) {
@@ -15,14 +17,15 @@ export async function initTatumClient(): Promise<Sui> {
 
   try {
     const tatum = await TatumSDK.init<Sui>({
-      network: Network.SUI,
+      network: Network.SUI_TESTNET,
       apiKey: {
         v4: TATUM_API_KEY,
       },
+      rpcUrl: TATUM_RPC_URL,
     });
 
     tatumClient = tatum;
-    console.log("✅ Tatum SDK initialized for SUI");
+    console.log(`✅ Tatum SDK initialized for SUI Testnet (${TATUM_RPC_URL})`);
     return tatum;
   } catch (error) {
     console.error("❌ Failed to initialize Tatum SDK:", error);

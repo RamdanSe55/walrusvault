@@ -2,7 +2,7 @@ import { TatumSDK, Network, Sui } from "@tatum/sdk";
 
 // Tatum RPC configuration
 const TATUM_API_KEY = process.env["TATUM_API_KEY"] || "";
-const TATUM_RPC_URL = process.env["TATUM_RPC_URL"] || "https://sui-testnet.gateway.tatum.io";
+const TATUM_RPC_URL = process.env["TATUM_RPC_URL"] || "https://joe-dc3c9b4f.gateway.tatum.io/";
 
 let tatumClient: Sui | null = null;
 
